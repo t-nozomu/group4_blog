@@ -1,6 +1,6 @@
 <?php
 // src/Controller/ArticlesController.php
-
+//
 namespace App\Controller;
 
 use App\Controller\AppController;
@@ -25,7 +25,7 @@ class ArticlesController extends AppController
         $article = $this->Articles->get($id);
         $this->set(compact('article'));
     }
-
+//
     public function add()
     {
         $article = $this->Articles->newEntity();

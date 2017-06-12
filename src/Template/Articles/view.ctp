@@ -4,3 +4,14 @@
 <p><?= h($article->body) ?></p>
 
 <!--heyheyhey-->
+<br>
+<br>
+<h1>Comment</h1>
+<?php
+    echo $this->Form->create($comment_entity,['action'=>'comment']);
+    echo $this->Form->input('title');
+    echo $this->Form->input('body', ['rows' => '3']);
+    echo $this->Form->button(__('Save Comment'));
+    echo $this->Form->hidden('article_id',array('value'=>$article->id));
+    echo $this->Form->end();
+?>

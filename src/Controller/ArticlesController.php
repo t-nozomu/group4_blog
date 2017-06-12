@@ -1,6 +1,6 @@
 <?php
 // src/Controller/ArticlesController.php
-
+//
 namespace App\Controller;
 
 use App\Controller\AppController;

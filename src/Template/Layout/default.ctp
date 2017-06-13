@@ -22,8 +22,12 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
         <?= $cakeDescription ?>:
-        <?= $this->fetch('title') ?>
-    </title>
+        <?= $this->fetch('title')?>
+
+   <?= $this->title = mb_substr($this, 0, 13, 'utf-8'); //全角文字で先頭から１３文字取得
+    if(mb_strlen($this, 'utf-8') > '13')//１３文字より多い場合は「...」を追加
+        $this .= '…';
+?></title>
     <?= $this->Html->meta('icon') ?>
 
     <?= $this->Html->css('base.css') ?>
@@ -37,11 +41,8 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
     <nav class="top-bar expanded" data-topbar role="navigation">
         <ul class="title-area large-3 medium-4 columns">
             <li class="name">
-<<<<<<< HEAD
-                <h1><a href="/group4_blog"><?= $this->fetch('title') ?></a></h1>
-=======
                 <h1><a href="/group4_blog">TOP</a></h1>
->>>>>>> 71d12da93c67303a7d739aea511aa2e31b4af6e3
+
             </li>
         </ul>
         <div class="top-bar-section">

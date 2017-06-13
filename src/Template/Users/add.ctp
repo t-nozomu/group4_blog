@@ -9,6 +9,9 @@
         ]) ?>
     </fieldset>
 <?= $this->Form->button(__('投稿')); ?>
-<?= $this-> Html-> link（ '戻る', "javascript：history.back（）"）; ?>
+<?= $this->Form->end() ?>
+
+<?= $this->Form->create() ?>
+<?=$this->Form->button('戻る',array('onclick' => 'history.back(); return false;')) ?>
 <?= $this->Form->end() ?>
 </div>

@@ -37,7 +37,11 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
     <nav class="top-bar expanded" data-topbar role="navigation">
         <ul class="title-area large-3 medium-4 columns">
             <li class="name">
+<<<<<<< HEAD
                 <h1><a href="/group4_blog"><?= $this->fetch('title') ?></a></h1>
+=======
+                <h1><a href="/group4_blog">TOP</a></h1>
+>>>>>>> 71d12da93c67303a7d739aea511aa2e31b4af6e3
             </li>
         </ul>
         <div class="top-bar-section">

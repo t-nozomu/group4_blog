@@ -8,6 +8,7 @@
             'options' => ['admin' => 'Admin', 'author' => 'Author']
         ]) ?>
     </fieldset>
-<?= $this->Form->button(__('Submit')); ?>
+<?= $this->Form->button(__('投稿')); ?>
+<?= $this-> Html-> link（ '戻る', "javascript：history.back（）"）; ?>
 <?= $this->Form->end() ?>
 </div>

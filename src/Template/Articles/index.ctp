@@ -17,7 +17,13 @@
         <td><?= $article->id ?></td>
         <td>
             <?= $this->Html->link($article->title, ['action' => 'view', $article->id])?>
+            <!--$title = get_the_title(); //タイトルを取得（the_title()は書き出し）
+            $title = mb_substr($title, 0, 13, 'utf-8'); //全角文字で先頭から１３文字取得
+            if(mb_strlen($title, 'utf-8') > '13')//１３文字より多い場合は「...」を追加
+                $title .= '…';
+        ?> -->
         </td>
+
         <td>
             <?= $article->created->format('Y年m月d日 H:i:s') ?>
         </td>

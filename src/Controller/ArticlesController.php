@@ -1,6 +1,6 @@
 <?php
 // src/Controller/ArticlesController.php
-//
+
 namespace App\Controller;
 
 use App\Controller\AppController;
@@ -20,21 +20,12 @@ class ArticlesController extends AppController
         $this->set('articles', $this->Articles->find('all'));
     }
 
-    public function view($id = null){
-        if (!$id) {
-            throw new NotFoundException(__('Invalid article'));
-        }
-
-    //$article = $this->Articles->get($id);
-    $article = $this->Articles->find('all')->contain(['Comments'])->where(['id'=>$id])->first();
-
-    $this->set(compact('article'));
-
-    $this->loadModel('Comments');
-    $comment_entity = $this->Comments->newEntity($this->request->data);
-    $this->set('comment_entity', $comment_entity);
+    public function view($id)
+    {
+        $article = $this->Articles->get($id);
+        $this->set(compact('article'));
     }
-//
+
     public function add()
     {
         $article = $this->Articles->newEntity();

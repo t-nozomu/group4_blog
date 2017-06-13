@@ -5,13 +5,15 @@ namespace App\Controller;
 use App\Controller\AppController;
 use Cake\Event\Event;
 
-class UsersController extends AppController {
+class UsersController extends AppController
+{
 
     //その他のメソッド..
 
     //コントローラの各アクションの前に実行されます。
     //アクティブセッションのチェックや、ユーザー権限の検査をするために役立ちます。
-    public function beforeFilter(Event $event) {
+    public function beforeFilter(Event $event)
+    {
         parent::beforeFilter($event);
         //Allow users to register and logout.
         //You should not add the "login" action to allow list. Doing so would
@@ -36,24 +38,30 @@ class UsersController extends AppController {
         return $this->redirect($this->Auth->logout());
     }
 
-    public function index() {
+    public function index()
+    {
         $this->set('users', $this->Users->find('all'));
     }
 
-    public function view($id) {
+    public function view($id)
+    {
         $user = $this->Users->get($id);
         $this->set(compact('user'));
     }
 
-    public fuction add() {
-        $user = $this->Users->patchEntity($user, $this->request->getData());
-        if ($this->Users->save($user)) {
-            $this->Flash->success(__('The user has been saved.'));
-            return $this->redirect(['action' => 'add']);
+    public function add()
+    {
+        $user = $this->Users->newEntity();
+        if ($this->request->is('post')) {
+            $user = $this->Users->patchEntity($user, $this->request->getData());
+            if ($this->Users->save($user)) {
+                $this->Flash->success(__('The user has been saved.'));
+                return $this->redirect(['action' => 'add']);
+            }
+            $this->Flash->error(__('Unable to add the user.'));
         }
-        $this->Flash->error(__('Usable to add the user.'));
+        $this->set('user', $user);
     }
-    $this->set('user', $user);
 }
 
  ?>

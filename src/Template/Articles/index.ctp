@@ -17,7 +17,7 @@
         <td><?= $article->id ?></td>
         <td>
             <?= $this->Html->link($article->title, ['action' => 'view', $article->id])?>
-        
+
         </td>
 
         <td>

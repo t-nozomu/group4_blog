@@ -90,5 +90,5 @@
 
             return parent::isAuthorized($user);
         }
-    }
+    } 
  ?>

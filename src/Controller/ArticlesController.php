@@ -1,12 +1,6 @@
 <?php
-<<<<<<< HEAD
-// src/Controller/ArticlesController.php
-
-namespace App\Controller;
-=======
     //src/Controller/ArticlesController.php
     //モデルとのビジネスロジックを含み、投稿記事に関連する作業を行う場所
->>>>>>> KiyofumiMori
 
     namespace App\Controller; //名前空間: クラス/関数/定数の名前衝突を避けるために用いられる
 
@@ -28,22 +22,6 @@ namespace App\Controller;
             $this->set('articles', $this->Articles->find('all'));
         }
 
-<<<<<<< HEAD
-    public function view($id)
-    {
-        $article = $this->Articles->get($id);
-        $this->set(compact('article'));
-    }
-
-    public function add()
-    {
-        $article = $this->Articles->newEntity();
-        if ($this->request->is('post')) {
-            $article = $this->Articles->patchEntity($article, $this->request->getData());
-            if ($this->Articles->save($article)) {
-                $this->Flash->success(__('Your article has been saved.'));
-                return $this->redirect(['action' => 'index']);
-=======
         public function view($id) {
             $article = $this->Articles->get($id);
             $this->set(compact('article'));
@@ -79,7 +57,6 @@ namespace App\Controller;
                     return $this->redirect(['action' => 'index']);
                 }
                 $this->Flash->error(__('Unable to update your article.'));
->>>>>>> KiyofumiMori
             }
 
             $this->set('article', $article);

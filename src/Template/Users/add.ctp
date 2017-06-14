@@ -8,7 +8,6 @@
             'options' => ['admin' => 'Admin', 'author' => 'Author']
         ]) ?>
     </fieldset>
-<?= $this->Form->button(__('投稿')); ?>
 <?= $this->Form->end() ?>
 
 <?= $this->Form->create() ?>

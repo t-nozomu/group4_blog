@@ -2,11 +2,9 @@
 // src/Controller/ArticlesController.php
 
 namespace App\Controller;
-<<<<<<< HEAD
-=======
+
     //src/Controller/ArticlesController.php
     //モデルとのビジネスロジックを含み、投稿記事に関連する作業を行う場所
->>>>>>> 4ea5407f53dd1cdd0a72bad5a064f262b9337744
 
 use App\Controller\AppController;
 
@@ -20,19 +18,19 @@ class ArticlesController extends AppController
         $this->loadComponent('Flash'); // Include the FlashComponent
     }
 
-<<<<<<< HEAD
+
     public function index()
     {
         $this->set('articles', $this->Articles->find('all'));
     }
 
-=======
+
         public function index() {
             // $articles = $this->Articles->find('all'); modelのarticlesという変数をもってくる
             // $this->set(compact('articles')); //set()を使い、controller から viewにデータを渡す
             $this->set('articles', $this->Articles->find('all'));
         }
->>>>>>> 4ea5407f53dd1cdd0a72bad5a064f262b9337744
+
     public function view($id)
     {
         $article = $this->Articles->get($id);
@@ -47,8 +45,7 @@ class ArticlesController extends AppController
             if ($this->Articles->save($article)) {
                 $this->Flash->success(__('Your article has been saved.'));
                 return $this->redirect(['action' => 'index']);
-<<<<<<< HEAD
-=======
+
         public function view($id) {
             $article = $this->Articles->get($id);
             $this->set(compact('article'));
@@ -84,7 +81,6 @@ class ArticlesController extends AppController
                     return $this->redirect(['action' => 'index']);
                 }
                 $this->Flash->error(__('Unable to update your article.'));
->>>>>>> 4ea5407f53dd1cdd0a72bad5a064f262b9337744
             }
             $this->Flash->error(__('Unable to add your article.'));
         }

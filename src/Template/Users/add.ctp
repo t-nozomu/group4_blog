@@ -7,7 +7,7 @@
         <?= $this->Form->control('role', [
             'options' => ['admin' => 'Admin', 'author' => 'Author']
         ]) ?>
-    </fieldset>
+   </fieldset>
 <?= $this->Form->button(__('Submit')); ?>
 <?= $this->Form->end() ?>
 </div>

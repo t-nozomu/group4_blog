@@ -43,8 +43,6 @@ class AppController extends Controller
 
         $this->loadComponent('RequestHandler');
         $this->loadComponent('Flash');
-<<<<<<< HEAD
-=======
         $this->loadComponent('Auth', [
             'authenticate' => [
                 'Form' => [ // 認証の種類を指定。Form,Basic,Digestが使える。デフォルトはForm
@@ -65,7 +63,6 @@ class AppController extends Controller
                 'home'
             ]
         ]);
->>>>>>> KiyofumiMori
 
         /*
          * Enable the following components for recommended CakePHP security settings.

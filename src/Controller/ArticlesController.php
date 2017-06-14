@@ -22,9 +22,12 @@
             $this->set('articles', $this->Articles->find('all'));
         }
 
-        public function view($id) {
-            $article = $this->Articles->get($id);
-            $this->set(compact('article'));
+
+        public function view($id)
+        {
+            //$article = $this->Articles->get($id);
+            $article = $this->Articles->find('all')->contain(['Comments'])->where(['id'=>$id])->first();
+            $this->set('article',$article);
         }
 
         public function add() {
@@ -39,14 +42,8 @@
                     return $this->redirect(['action' => 'index']);
                 }
                 $this->Flash->error(__('Unable to add your article.'));
-            }
-            $this->set('article', $article);
-
-            // Just added the categories list to be able to choose
-            // one category for an article
-            //$categories = $this->Articles->Categories->find('treeList');
-            //$this->set(compact('categories'));
         }
+    }
 
         public function edit($id = null) {
             $article = $this->Articles->get($id);

@@ -11,6 +11,10 @@ class ArticlesTable extends Table
     public function initialize(array $config)
     {
         $this->addBehavior('Timestamp');
+
+        $this->hasMany('Comments', [
+        'className' => 'Comments'
+        ]);
     }
 
     public function validationDefault(Validator $validator)

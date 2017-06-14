@@ -3,6 +3,11 @@
 <p> <?= $article->created->format('Y年m月d日 H:i:s') ?></p>
 <p><?= h($article->body) ?></p>
 
+<?=
+ $this->Form->postLink(
+     '記事一覧へ',
+     ['action' => 'index'])
+?>
 <!--heyheyhey-->
 <br>
 <br>

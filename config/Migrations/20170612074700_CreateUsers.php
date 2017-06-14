@@ -23,7 +23,7 @@ class CreateUsers extends AbstractMigration
             'limit' => 255,
             'null' => false,
         ]);
-        $table->addColum('role', 'string', [
+        $table->addColumn('role', 'string', [
             'default' => null,
             'limit' => 20,
             'null' => false,

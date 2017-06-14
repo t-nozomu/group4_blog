@@ -66,8 +66,8 @@ namespace App\Controller;
 
             // Just added the categories list to be able to choose
             // one category for an article
-            $categories = $this->Articles->Categories->find('treeList');
-            $this->set(compact('categories'));
+            //$categories = $this->Articles->Categories->find('treeList');
+            //$this->set(compact('categories'));
         }
 
         public function edit($id = null) {

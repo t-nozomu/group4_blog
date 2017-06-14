@@ -43,6 +43,29 @@ class AppController extends Controller
 
         $this->loadComponent('RequestHandler');
         $this->loadComponent('Flash');
+<<<<<<< HEAD
+=======
+        $this->loadComponent('Auth', [
+            'authenticate' => [
+                'Form' => [ // 認証の種類を指定。Form,Basic,Digestが使える。デフォルトはForm
+                    'fields' => [ // ユーザー名とパスワードに使うカラムの指定。省略した場合はusernameとpasswordになる
+                        'username' => 'username', // ユーザー名のカラムを指定
+                        'password' => 'password' //パスワードに使うカラムを指定
+                    ]
+                ]
+            ],
+            //'authorize' => ['Controller'],
+            'loginRedirect' => [
+                'controller' => 'Articles',
+                'action' => 'index'
+            ],
+            'logoutRedirect' => [
+                'controller' => 'Pages',
+                'action' => 'display',
+                'home'
+            ]
+        ]);
+>>>>>>> KiyofumiMori
 
         /*
          * Enable the following components for recommended CakePHP security settings.
@@ -50,6 +73,22 @@ class AppController extends Controller
          */
         //$this->loadComponent('Security');
         //$this->loadComponent('Csrf');
+    }
+
+    public function isAuthorized($user)
+    {
+        //Adim can access every action
+        if (isset($user['role']) && $user['role'] === 'admin') {
+            return true;
+        }
+
+        //Default deny
+        return false;
+    }
+
+    public function beforeFilter(Event $event)
+    {
+        $this->Auth->allow(['index', 'view', 'display']);
     }
 
     /**

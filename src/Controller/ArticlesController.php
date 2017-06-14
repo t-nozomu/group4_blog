@@ -22,8 +22,9 @@ class ArticlesController extends AppController
 
     public function view($id)
     {
-        $article = $this->Articles->get($id);
-        $this->set(compact('article'));
+        //$article = $this->Articles->get($id);
+        $article = $this->Articles->find('all')->contain(['Comments'])->where(['id'=>$id])->first();
+        $this->set('article',$article);
     }
 
     public function add()

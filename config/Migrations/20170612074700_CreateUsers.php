@@ -14,13 +14,18 @@ class CreateUsers extends AbstractMigration
     {
         $table = $this->table('users');
         $table->addColumn('username', 'string', [
-            'default' => "cpdex",
+            'default' => null,
             'limit' => 16,
             'null' => false,
         ]);
         $table->addColumn('password', 'string', [
-            'default' => "dtmag",
-            'limit' => 16,
+            'default' => null,
+            'limit' => 255,
+            'null' => false,
+        ]);
+        $table->addColumn('role', 'string', [
+            'default' => null,
+            'limit' => 20,
             'null' => false,
         ]);
         $table->create();

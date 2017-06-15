@@ -22,7 +22,10 @@
             $this->set('articles', $this->Articles->find('all'));
         }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/KiyofumiMori
         public function view($id)
         {
             //$article = $this->Articles->get($id);
@@ -35,17 +38,21 @@
             if ($this->request->is('post')) {
                 $article = $this->Articles->patchEntity($article, $this->request->getData());
                 $article->user_id = $this->Auth->user('id');
-                //$newData = ['user_id' => $this->Auth->user('id')];
-                //$article = $this->Articles->patchEntity($article, $newData);
                 if ($this->Articles->save($article)) {
                     $this->Flash->success(__('Your article has been saved.'));
                     return $this->redirect(['action' => 'index']);
                 }
                 $this->Flash->error(__('Unable to add your article.'));
+<<<<<<< HEAD
+=======
+            }
+            $this->set('article', $article);
+>>>>>>> origin/KiyofumiMori
         }
     }
 
-        public function edit($id = null) {
+        public function edit($id = null)
+        {
             $article = $this->Articles->get($id);
             if ($this->request->is(['post', 'put'])) {
                 $this->Articles->patchEntity($article, $this->request->getData());
@@ -68,8 +75,12 @@
                 $this->Flash->success(__('The article with id: {0} has been deleted.', h($id)));
                 return $this->redirect(['action' => 'index']);
             }
+<<<<<<< HEAD
         $this->set('article', $article);
     }
+=======
+        }
+>>>>>>> origin/KiyofumiMori
 
         public function isAuthorized($user)
         {

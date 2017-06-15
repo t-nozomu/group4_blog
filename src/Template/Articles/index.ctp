@@ -2,6 +2,7 @@
 
 <h1>Blog articles</h1>
 <p><?= $this->Html->link('Login', ['controller' => 'Users', 'action' => 'login']) ?></p>
+<p><?= $this->Html->link('Logout', ['controller' => 'Users', 'action' => 'logout']) ?></p>
 <p><?= $this->Html->link('投稿', ['action' => 'add']) ?></p>
 <table>
     <tr>

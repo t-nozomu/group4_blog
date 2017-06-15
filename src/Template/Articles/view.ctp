@@ -38,11 +38,13 @@
  <td><?= $comment->created->format('Y年m月d日 H:i:s') ?></td>
  <td><?= $comment->body ?></td>
  <td>
- <?= $this->Form->postLink(
-     'Delete',
-     ['controller'=>'comments','action' => 'delete', $comment->id],
-     ['confirm' => 'Are you sure?'])
-     ?>
+    <?php if( is_null($auth) ): ?>
+    <?= $this->Form->postLink(
+        'Delete',
+        ['controller'=>'comments','action' => 'delete', $comment->id],
+        ['confirm' => 'Are you sure?'])
+    ?>
+    <?php endif; ?>
      <?= $this->Html->link('Edit', ['controller'=>'comments','action' => 'edit', $comment->id]) ?>
  </td>
  </tr>

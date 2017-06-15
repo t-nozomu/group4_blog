@@ -41,9 +41,6 @@
                 $this->Flash->error(__('Unable to add your article.'));
 
             }
-            $this->set('article', $article);
-
-        }
         $this->set(compact('article'));
     }
 

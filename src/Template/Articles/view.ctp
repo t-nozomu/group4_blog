@@ -1,7 +1,7 @@
 <!-- File: src/Template/Articles/view.ctp -->
 <h1><?= h($article->title) ?></h1>
 <p> <?= $article->created->format('Y年m月d日 H:i:s') ?></p>
-<p><?= h($article->body) ?></p>
+<p> <?php echo nl2br(h($article->body)) ?></p>
 
 <?=
  $this->Form->postLink(
@@ -26,12 +26,14 @@
 <h1>Comment</h1>
 <table>
  <tr>
+<th>Id</th>
  <th>handlename</th>
  <th>created</th>
  <th>body</th>
  </tr>
  <?php foreach ($article->comments as $comment): ?>
  <tr>
+ <td><?= $comment->id ?></td>
  <td><?= $comment->handlename ?></td>
  <td><?= $comment->created->format('Y年m月d日 H:i:s') ?></td>
  <td><?= $comment->body ?></td>

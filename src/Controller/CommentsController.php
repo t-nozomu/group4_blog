@@ -50,7 +50,7 @@ class CommentsController extends AppController
      */
     public function add()
     {
-         $comment = $this->Comments->newEntity();
+         $comment = $this->Comments->newEntity($this->request->data);
         if ($this->request->is('post')) {
             $comment = $this->Comments->patchEntity($comment, $this->request->getData());
             if ($this->Comments->save($comment)) {
@@ -62,8 +62,7 @@ class CommentsController extends AppController
             $this->Flash->error(__('The comment could not be saved. Please, try again.'));
             $this->redirect(['controller'=>'articles','action' => 'view',$comment->article_id]);
         }
-        //$this->set(compact('comment'));
-        //$this->set('_serialize', ['comment']);
+        $this->set(compact('comment'));
     }
 
     /**

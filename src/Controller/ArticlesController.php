@@ -14,7 +14,6 @@
             parent::initialize();
 
             $this->loadComponent('Flash'); // Include the FlashComponent
-            $this->set('auth', $this->Auth->user() );
         }
 
     public function index()

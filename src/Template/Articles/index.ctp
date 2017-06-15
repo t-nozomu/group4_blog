@@ -27,12 +27,14 @@
             <?= $article->created->format('Y年m月d日 H:i:s') ?>
         </div>
         <div class="div_actions">
-            <?= $this->Form->postLink(
-                'Delete',
-                ['action' => 'delete', $article->id],
-                ['confirm' => "No."."$article->id"."の「"."$article->title"."」を削除しますか？"])
-            ?>
-            <span class="edit_color"><?= $this->Html->link('Edit', ['action' => 'edit', $article->id],['class'=>'edit_color']) ?></span>
+            <?php if( !is_null($auth) ): ?>
+                <?= $this->Form->postLink(
+                    'Delete',
+                    ['action' => 'delete', $article->id],
+                    ['confirm' => "No."."$article->id"."の「"."$article->title"."」を削除しますか？"])
+                ?>
+                    <span class="edit_color"><?= $this->Html->link('Edit', ['action' => 'edit', $article->id],['class'=>'edit_color']) ?></span>
+            <?php endif; ?>
         </div>
     </div>
     <?php endforeach; ?>

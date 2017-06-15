@@ -1,7 +1,7 @@
 
 <!-- File: src/Template/Articles/index.ctp (delete links added) -->
 
-<h1 class=title_name>Fuckin Blog</h1>
+<h1 class=title_name>Blog Articles</h1>
 <p><?= $this->Html->link('投稿', ['action' => 'add']) ?></p>
 <div>
     <div class="div_main div_color">

@@ -9,6 +9,7 @@
         <th>Title</th>
         <th>Created</th>
         <th>Action</th>
+
     </tr>
 
 <!-- ここで $articles クエリオブジェクトをループして、投稿情報を表示 -->

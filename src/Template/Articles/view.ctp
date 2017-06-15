@@ -32,7 +32,8 @@
      'Delete',
      ['controller'=>'comments','action' => 'delete', $comment->id],
      ['confirm' => 'Are you sure?'])
- ?>
+     ?>
+     <?= $this->Html->link('Edit', ['controller'=>'comments','action' => 'edit', $comment->id]) ?>
  </td>
  </tr>
  <?php endforeach; ?>

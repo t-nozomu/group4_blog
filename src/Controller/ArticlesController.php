@@ -26,7 +26,7 @@ class ArticlesController extends AppController
         $article = $this->Articles->find('all')->contain(['Comments'])->where(['id'=>$id])->first();
         $this->set('article',$article);
     }
-//
+
     public function add()
     {
         $article = $this->Articles->newEntity();
@@ -40,6 +40,7 @@ class ArticlesController extends AppController
         }
         $this->set('article', $article);
     }
+
     public function edit($id = null)
 {
     $article = $this->Articles->get($id);

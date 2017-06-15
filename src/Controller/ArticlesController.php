@@ -23,9 +23,13 @@
         }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> origin/KiyofumiMori
+=======
+
+>>>>>>> kishino
         public function view($id)
         {
             //$article = $this->Articles->get($id);
@@ -51,8 +55,12 @@
         }
     }
 
+<<<<<<< HEAD
         public function edit($id = null)
         {
+=======
+        public function edit($id = null) {
+>>>>>>> kishino
             $article = $this->Articles->get($id);
             if ($this->request->is(['post', 'put'])) {
                 $this->Articles->patchEntity($article, $this->request->getData());
@@ -61,10 +69,27 @@
                     return $this->redirect(['action' => 'index']);
                 }
                 $this->Flash->error(__('Unable to update your article.'));
+<<<<<<< HEAD
+=======
+
+    public function add()
+    {
+        $article = $this->Articles->newEntity();
+        if ($this->request->is('post')) {
+            $article = $this->Articles->patchEntity($article, $this->request->getData());
+            if ($this->Articles->save($article)) {
+                $this->Flash->success(__('Your article has been saved.'));
+                return $this->redirect(['action' => 'index']);
+
+>>>>>>> kishino
             }
 
             $this->set('article', $article);
         }
+<<<<<<< HEAD
+=======
+
+>>>>>>> kishino
 
         public function delete($id)
         {
@@ -76,11 +101,22 @@
                 return $this->redirect(['action' => 'index']);
             }
 <<<<<<< HEAD
+<<<<<<< HEAD
         $this->set('article', $article);
     }
 =======
         }
 >>>>>>> origin/KiyofumiMori
+=======
+{
+    $article = $this->Articles->get($id);
+    if ($this->request->is(['post', 'put'])) {
+        $this->Articles->patchEntity($article, $this->request->getData());
+        if ($this->Articles->save($article)) {
+            $this->Flash->success(__('Your article has been updated.'));
+            return $this->redirect(['action' => 'index']);
+  }
+>>>>>>> kishino
 
         public function isAuthorized($user)
         {

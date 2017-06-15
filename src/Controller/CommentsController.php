@@ -2,6 +2,7 @@
 namespace App\Controller;
 
 use App\Controller\AppController;
+use Cake\Event\Event;
 
 /**
  * Comments Controller
@@ -12,6 +13,12 @@ use App\Controller\AppController;
  */
 class CommentsController extends AppController
 {
+
+    public function beforeFilter(Event $event)
+    {
+        parent::beforeFilter($event);
+        $this->Auth->allow(['add', 'edit', 'delete']);
+    }
 
     /**
      * Index method

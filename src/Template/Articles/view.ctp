@@ -30,6 +30,7 @@
  <th>handlename</th>
  <th>created</th>
  <th>body</th>
+ <th>action</th>
  </tr>
  <?php foreach ($article->comments as $comment): ?>
  <tr>

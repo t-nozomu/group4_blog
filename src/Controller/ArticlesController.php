@@ -22,14 +22,6 @@
             $this->set('articles', $this->Articles->find('all'));
         }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-=======
->>>>>>> origin/KiyofumiMori
-=======
-
->>>>>>> kishino
         public function view($id)
         {
             //$article = $this->Articles->get($id);
@@ -47,20 +39,18 @@
                     return $this->redirect(['action' => 'index']);
                 }
                 $this->Flash->error(__('Unable to add your article.'));
-<<<<<<< HEAD
-=======
+
             }
             $this->set('article', $article);
->>>>>>> origin/KiyofumiMori
+
         }
     }
 
-<<<<<<< HEAD
+
         public function edit($id = null)
         {
-=======
         public function edit($id = null) {
->>>>>>> kishino
+
             $article = $this->Articles->get($id);
             if ($this->request->is(['post', 'put'])) {
                 $this->Articles->patchEntity($article, $this->request->getData());
@@ -69,8 +59,6 @@
                     return $this->redirect(['action' => 'index']);
                 }
                 $this->Flash->error(__('Unable to update your article.'));
-<<<<<<< HEAD
-=======
 
     public function add()
     {
@@ -81,15 +69,12 @@
                 $this->Flash->success(__('Your article has been saved.'));
                 return $this->redirect(['action' => 'index']);
 
->>>>>>> kishino
+
             }
 
             $this->set('article', $article);
         }
-<<<<<<< HEAD
-=======
 
->>>>>>> kishino
 
         public function delete($id)
         {
@@ -100,14 +85,12 @@
                 $this->Flash->success(__('The article with id: {0} has been deleted.', h($id)));
                 return $this->redirect(['action' => 'index']);
             }
-<<<<<<< HEAD
-<<<<<<< HEAD
+
         $this->set('article', $article);
     }
-=======
+
         }
->>>>>>> origin/KiyofumiMori
-=======
+
 {
     $article = $this->Articles->get($id);
     if ($this->request->is(['post', 'put'])) {
@@ -116,7 +99,7 @@
             $this->Flash->success(__('Your article has been updated.'));
             return $this->redirect(['action' => 'index']);
   }
->>>>>>> kishino
+
 
         public function isAuthorized($user)
         {

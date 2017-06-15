@@ -1,13 +1,18 @@
 <!-- File: src/Template/Articles/index.ctp (delete links added) -->
 
 <h1>Blog articles</h1>
-<p><?= $this->Html->link('Add Article', ['action' => 'add']) ?></p>
+<p><?= $this->Html->link('Login', ['controller' => 'Users', 'action' => 'login']) ?></p>
+<p><?= $this->Html->link('投稿', ['action' => 'add']) ?></p>
 <table>
     <tr>
         <th>Id</th>
         <th>Title</th>
         <th>Created</th>
+<<<<<<< HEAD
 
+=======
+        <th>Action</th>
+>>>>>>> master
     </tr>
 
 <!-- ここで $articles クエリオブジェクトをループして、投稿情報を表示 -->
@@ -16,8 +21,10 @@
     <tr>
         <td><?= $article->id ?></td>
         <td>
-            <?= $this->Html->link($article->title, ['action' => 'view', $article->id]) ?>
+            <?= $this->Html->link($article->title, ['action' => 'view', $article->id])?>
+
         </td>
+
         <td>
             <?= $article->created->format('Y年m月d日 H:i:s') ?>
         </td>
@@ -29,6 +36,7 @@
             ?>
             <?= $this->Html->link('Edit', ['action' => 'edit', $article->id]) ?>
         </td>
+
     </tr>
     <?php endforeach; ?>
 

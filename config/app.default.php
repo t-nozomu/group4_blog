@@ -1,5 +1,4 @@
 <?php
-//
 return [
     /**
      * Debug Level:
@@ -234,7 +233,7 @@ return [
             'password' => 'secret',
             'database' => 'my_app',
             'encoding' => 'utf8',
-            'timezone' => 'UTC',
+            'timezone' => 'Asia/Tokyo',
             'flags' => [],
             'cacheMetadata' => true,
             'log' => false,
@@ -274,7 +273,7 @@ return [
             'password' => 'secret',
             'database' => 'test_myapp',
             'encoding' => 'utf8',
-            'timezone' => 'UTC',
+            'timezone' => 'Asia/Tokyo',
             'cacheMetadata' => true,
             'quoteIdentifiers' => false,
             'log' => false,

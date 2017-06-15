@@ -7,7 +7,7 @@
         <th>Id</th>
         <th>Title</th>
         <th>Created</th>
-    
+
     </tr>
 
 <!-- ここで $articles クエリオブジェクトをループして、投稿情報を表示 -->
@@ -19,7 +19,7 @@
             <?= $this->Html->link($article->title, ['action' => 'view', $article->id]) ?>
         </td>
         <td>
-            <?= $article->created->format(DATE_RFC850) ?>
+            <?= $article->created->format('Y年m月d日 H:i:s') ?>
         </td>
         <td>
             <?= $this->Form->postLink(

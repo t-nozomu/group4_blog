@@ -32,6 +32,14 @@
  <tr>
  <td><?= $comment->handlename ?></td>
  <td><?= $comment->body ?></td>
+ <td>
+ <?= $this->Form->postLink(
+     'Delete',
+     ['controller'=>'comments','action' => 'delete', $comment->id],
+     ['confirm' => 'Are you sure?'])
+     ?>
+     <?= $this->Html->link('Edit', ['controller'=>'comments','action' => 'edit', $comment->id]) ?>
+ </td>
  </tr>
  <?php endforeach; ?>
 </table>

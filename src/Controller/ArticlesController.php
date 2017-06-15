@@ -68,7 +68,8 @@
                 $this->Flash->success(__('The article with id: {0} has been deleted.', h($id)));
                 return $this->redirect(['action' => 'index']);
             }
-        }
+        $this->set('article', $article);
+    }
 
         public function isAuthorized($user)
         {

@@ -22,10 +22,7 @@
             $this->set('articles', $this->Articles->find('all'));
         }
 
-<<<<<<< HEAD
 
-=======
->>>>>>> origin/KiyofumiMori
         public function view($id)
         {
             //$article = $this->Articles->get($id);
@@ -48,7 +45,6 @@
         }
     }
 
-<<<<<<< HEAD
         public function edit($id = null) {
             $article = $this->Articles->get($id);
             if ($this->request->is(['post', 'put'])) {
@@ -58,8 +54,7 @@
                     return $this->redirect(['action' => 'index']);
                 }
                 $this->Flash->error(__('Unable to update your article.'));
-<<<<<<< HEAD
-=======
+
     public function add()
     {
         $article = $this->Articles->newEntity();
@@ -68,14 +63,12 @@
             if ($this->Articles->save($article)) {
                 $this->Flash->success(__('Your article has been saved.'));
                 return $this->redirect(['action' => 'index']);
->>>>>>> origin/tamura_nozomu
-=======
->>>>>>> origin/KiyofumiMori
+
             }
 
             $this->set('article', $article);
         }
-<<<<<<< HEAD
+
 
         public function delete($id)
         {
@@ -86,11 +79,6 @@
                 $this->Flash->success(__('The article with id: {0} has been deleted.', h($id)));
                 return $this->redirect(['action' => 'index']);
             }
-=======
-        $this->set('article', $article);
-    }
-
-    public function edit($id = null)
 {
     $article = $this->Articles->get($id);
     if ($this->request->is(['post', 'put'])) {
@@ -98,8 +86,7 @@
         if ($this->Articles->save($article)) {
             $this->Flash->success(__('Your article has been updated.'));
             return $this->redirect(['action' => 'index']);
->>>>>>> origin/tamura_nozomu
-        }
+  }
 
         public function isAuthorized($user)
         {

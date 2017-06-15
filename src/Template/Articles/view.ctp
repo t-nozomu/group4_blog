@@ -27,11 +27,13 @@
 <table>
  <tr>
  <th>handlename</th>
+ <th>created</th>
  <th>body</th>
  </tr>
  <?php foreach ($article->comments as $comment): ?>
  <tr>
  <td><?= $comment->handlename ?></td>
+ <td><?= $comment->created->format('Y年m月d日 H:i:s') ?></td>
  <td><?= $comment->body ?></td>
  <td>
  <?= $this->Form->postLink(

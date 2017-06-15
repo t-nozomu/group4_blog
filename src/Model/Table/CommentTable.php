@@ -20,6 +20,8 @@ class CommentsTable extends Table
         ->notEmpty('handlename')
         ->notEmpty('body')
         ->notEmpty('password');
+        ->notEmpty('created');
+
 
         return $validator;
     }

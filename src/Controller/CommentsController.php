@@ -59,7 +59,7 @@ class CommentsController extends AppController
     {
          $comment = $this->Comments->newEntity($this->request->data);
         if ($this->request->is('post')) {
-            $comment = $this->Comments->patchEntity($comment, $this->request->getData());
+            //$comment = $this->Comments->patchEntity($comment, $this->request->getData());
             if ($this->Comments->save($comment)) {
                 $this->Flash->success(__('The comment has been saved.'));
 

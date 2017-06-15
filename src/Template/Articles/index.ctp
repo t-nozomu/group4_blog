@@ -8,11 +8,8 @@
         <th>Id</th>
         <th>Title</th>
         <th>Created</th>
-<<<<<<< HEAD
-
-=======
         <th>Action</th>
->>>>>>> master
+
     </tr>
 
 <!-- ここで $articles クエリオブジェクトをループして、投稿情報を表示 -->

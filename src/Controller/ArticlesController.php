@@ -22,7 +22,6 @@
             $this->set('articles', $this->Articles->find('all'));
         }
 
-
         public function view($id)
         {
             //$article = $this->Articles->get($id);
@@ -35,18 +34,21 @@
             if ($this->request->is('post')) {
                 $article = $this->Articles->patchEntity($article, $this->request->getData());
                 $article->user_id = $this->Auth->user('id');
-                //$newData = ['user_id' => $this->Auth->user('id')];
-                //$article = $this->Articles->patchEntity($article, $newData);
                 if ($this->Articles->save($article)) {
                     $this->Flash->success(__('Your article has been saved.'));
                     return $this->redirect(['action' => 'index']);
                 }
                 $this->Flash->error(__('Unable to add your article.'));
-        }
+
+            }
         $this->set(compact('article'));
     }
 
+
+        public function edit($id = null)
+        {
         public function edit($id = null) {
+
             $article = $this->Articles->get($id);
             if ($this->request->is(['post', 'put'])) {
                 $this->Articles->patchEntity($article, $this->request->getData());
@@ -55,10 +57,22 @@
                     return $this->redirect(['action' => 'index']);
                 }
                 $this->Flash->error(__('Unable to update your article.'));
+
+    public function add()
+    {
+        $article = $this->Articles->newEntity();
+        if ($this->request->is('post')) {
+            $article = $this->Articles->patchEntity($article, $this->request->getData());
+            if ($this->Articles->save($article)) {
+                $this->Flash->success(__('Your article has been saved.'));
+                return $this->redirect(['action' => 'index']);
+
+
             }
 
             $this->set('article', $article);
         }
+
 
         public function delete($id)
         {
@@ -69,8 +83,21 @@
                 $this->Flash->success(__('The article with id: {0} has been deleted.', h($id)));
                 return $this->redirect(['action' => 'index']);
             }
+
         $this->set('article', $article);
     }
+
+        }
+
+{
+    $article = $this->Articles->get($id);
+    if ($this->request->is(['post', 'put'])) {
+        $this->Articles->patchEntity($article, $this->request->getData());
+        if ($this->Articles->save($article)) {
+            $this->Flash->success(__('Your article has been updated.'));
+            return $this->redirect(['action' => 'index']);
+  }
+
 
         public function isAuthorized($user)
         {

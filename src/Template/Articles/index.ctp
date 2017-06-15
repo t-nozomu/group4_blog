@@ -8,8 +8,8 @@
     <tr>
         <th>Id</th>
         <th>Title</th>
-        <th>Created</th>
         <th>Comments</th>
+        <th>Created</th>
         <th>Actions</th>
     </tr>
 
@@ -22,13 +22,13 @@
             <?= $this->Html->link($article->title, ['action' => 'view', $article->id])?>
 
         </td>
-
-        <td>
-            <?= $article->created->format('Y年m月d日 H:i:s') ?>
-        </td>
         <td>
             <?= count($article->comments) ?>
         </td>
+        <td>
+            <?= $article->created->format('Y年m月d日 H:i:s') ?>
+        </td>
+
         <td>
             <?= $this->Form->postLink(
                 'Delete',

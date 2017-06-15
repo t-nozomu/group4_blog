@@ -1,27 +1,26 @@
-<!-- File: src/Template/Articles/index.ctp (delete links added) -->
-
-<h1>Blog articles</h1>
+<h1 class=title_name>Blog articles</h1>
 <?php if( is_null($auth) ): ?>
     <p><?= $this->Html->link('Login', ['controller' => 'Users', 'action' => 'login']) ?></p>
     <?php else: ?>
         <p><?= $this->Html->link('Logout', ['controller' => 'Users', 'action' => 'logout']) ?></p>
 <?php endif; ?>
-
 <?php if( !is_null($auth) ): ?>
     <p><?= $this->Html->link('投稿', ['action' => 'add']) ?></p>
 <?php endif; ?>
-<table>
-    <tr>
-        <th>Id</th>
-        <th>Title</th>
-        <th>Comments</th>
-        <th>Created</th>
-        <?php if( !is_null($auth) ): ?><th>Actions</th><?php endif; ?>
-    </tr>
+<div>
+    <div class="div_main div_color">
+        <div class="div_id">Id</div>
+        <div class="div_title">Title</div>
+        <div class="div_created">Created</div>
+        <div class="div_actions">Actions</div>
+
+    </div>
+
 
 <!-- ここで $articles クエリオブジェクトをループして、投稿情報を表示 -->
 
     <?php foreach ($articles as $article): ?>
+
     <tr>
         <td><?= $article->id ?></td>
         <td>
@@ -47,6 +46,26 @@
         </td>
 
     </tr>
+
+    <div class="div_main">
+        <div class="div_id"><?= $article->id ?></div>
+        <div class="div_title">
+            <?= $this->Html->link($article->title, ['action' => 'view', $article->id]) ?>
+        </div>
+        <div class="div_created">
+            <?= $article->created->format('Y年m月d日 H:i:s') ?>
+        </div>
+        <div class="div_actions">
+            <?= $this->Form->postLink(
+                'Delete',
+                ['action' => 'delete', $article->id],
+                ['confirm' => 'Are you sure?'])
+            ?>
+            <span class="edit_color"><?= $this->Html->link('Edit', ['action' => 'edit', $article->id],['class'=>'edit_color']) ?></span>
+        </div>
+    </div>
+
     <?php endforeach; ?>
 
-</table>
+
+</div>

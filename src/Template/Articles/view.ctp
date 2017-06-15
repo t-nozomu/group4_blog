@@ -13,7 +13,7 @@
 <br>
 <h1>コメント</h1>
 <?php
-    echo $this->Form->create(null,['url'=>['controller'=>'comments','action'=>'add']]);
+    echo $this->Form->create($comment_entity,['url'=>['controller'=>'comments','action'=>'add']]);
     echo $this->Form->input('handlename');
     echo $this->Form->input('body', ['rows' => '3']);
     echo $this->Form->input('password');

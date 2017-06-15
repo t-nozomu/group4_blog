@@ -18,10 +18,11 @@ class CommentsTable extends Table
     {
         $validator
         ->notEmpty('handlename')
+        ->requirePresence('handlename')
         ->notEmpty('body')
-        ->notEmpty('password');
-        ->notEmpty('created');
-
+        ->requirePresence('body')
+        ->notEmpty('password')
+        ->requirePresence('password');
 
         return $validator;
     }

@@ -9,8 +9,8 @@
         <th>Id</th>
         <th>Title</th>
         <th>Created</th>
-        <th>Action</th>
-
+        <th>Comments</th>
+        <th>Actions</th>
     </tr>
 
 <!-- ここで $articles クエリオブジェクトをループして、投稿情報を表示 -->
@@ -25,6 +25,9 @@
 
         <td>
             <?= $article->created->format('Y年m月d日 H:i:s') ?>
+        </td>
+        <td>
+            <?= count($article->comments) ?>
         </td>
         <td>
             <?= $this->Form->postLink(

@@ -1,7 +1,7 @@
 <!-- File: src/Template/Articles/view.ctp -->
 <h1><?= h($article->title) ?></h1>
 <p> <?= $article->created->format('Y年m月d日 H:i:s') ?></p>
-<p><?= h($article->body) ?></p>
+<p> <?php echo nl2br(h($article->body)) ?></p>
 
 <?=
  $this->Form->postLink(

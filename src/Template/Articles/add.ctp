@@ -8,5 +8,4 @@
     echo $this->Form->button(__('投稿'));
     echo $this->Form->button('戻る',array('onclick' => 'history.back(); return false;'));
     echo $this->Form->end();
-
 ?>

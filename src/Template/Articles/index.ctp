@@ -7,6 +7,7 @@
 <?php if( !is_null($auth) ): ?>
     <p><?= $this->Html->link('投稿', ['action' => 'add']) ?></p>
 <?php endif; ?>
+<<<<<<< HEAD
 <div>
     <div class="div_main div_color">
         <div class="div_id">Id</div>
@@ -15,6 +16,16 @@
         <div class="div_actions">Actions</div>
 
     </div>
+=======
+<table>
+    <tr>
+        <th>Id</th>
+        <th>Title</th>
+        <th>Comments</th>
+        <th>Created</th>
+        <th><?php if( !is_null($auth) ): ?>Actions<?php endif; ?></th>
+    </tr>
+>>>>>>> origin/KiyofumiMori
 
 <!-- ここで $articles クエリオブジェクトをループして、投稿情報を表示 -->
 

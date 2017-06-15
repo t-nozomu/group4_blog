@@ -16,37 +16,9 @@
 
     </div>
 
-
 <!-- ここで $articles クエリオブジェクトをループして、投稿情報を表示 -->
 
     <?php foreach ($articles as $article): ?>
-
-    <tr>
-        <td><?= $article->id ?></td>
-        <td>
-            <?= $this->Html->link($article->title, ['action' => 'view', $article->id])?>
-
-        </td>
-        <td>
-            <?= count($article->comments) ?>
-        </td>
-        <td>
-            <?= $article->created->format('Y年m月d日 H:i:s') ?>
-        </td>
-
-        <td>
-            <?php if( !is_null($auth) ): ?>
-                <?= $this->Form->postLink(
-                    'Delete',
-                    ['action' => 'delete', $article->id],
-                    ['confirm' => 'Are you sure?'])
-                    ?>
-                <?= $this->Html->link('Edit', ['action' => 'edit', $article->id]) ?>
-            <?php endif; ?>
-        </td>
-
-    </tr>
-
     <div class="div_main">
         <div class="div_id"><?= $article->id ?></div>
         <div class="div_title">
@@ -64,7 +36,6 @@
             <span class="edit_color"><?= $this->Html->link('Edit', ['action' => 'edit', $article->id],['class'=>'edit_color']) ?></span>
         </div>
     </div>
-
     <?php endforeach; ?>
 
 

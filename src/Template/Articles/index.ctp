@@ -1,8 +1,11 @@
 <!-- File: src/Template/Articles/index.ctp (delete links added) -->
 
 <h1>Blog articles</h1>
-<p><?= $this->Html->link('Login', ['controller' => 'Users', 'action' => 'login']) ?></p>
-<p><?= $this->Html->link('Logout', ['controller' => 'Users', 'action' => 'logout']) ?></p>
+<?php if( is_null($auth) ): ?>
+    <p><?= $this->Html->link('Login', ['controller' => 'Users', 'action' => 'login']) ?></p>
+    <?php else: ?>
+        <p><?= $this->Html->link('Logout', ['controller' => 'Users', 'action' => 'logout']) ?></p>
+<?php endif; ?>
 <p><?= $this->Html->link('投稿', ['action' => 'add']) ?></p>
 <table>
     <tr>

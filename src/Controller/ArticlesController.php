@@ -47,8 +47,8 @@
     }
 
 
-        public function edit($id = null)
-        {
+            public function edit($id = null)
+            {
         public function edit($id = null) {
 
             $article = $this->Articles->get($id);

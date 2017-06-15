@@ -43,6 +43,7 @@
                 }
                 $this->Flash->error(__('Unable to add your article.'));
         }
+        $this->set(compact('article'));
     }
 
         public function edit($id = null) {

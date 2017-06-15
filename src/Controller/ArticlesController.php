@@ -55,6 +55,7 @@
                 }
                 $this->Flash->error(__('Unable to update your article.'));
             }
+            $this->set(compact('article'));
         }
 
 

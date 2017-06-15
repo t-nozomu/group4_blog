@@ -1,0 +1,46 @@
+
+/*blogの名前*/
+.title_name{
+    color : orange;
+}
+/*横並びにする*/
+.div_main{
+    display: -webkit-flex;
+    display: flex;
+}
+.div_id{
+    margin: left;
+    width:50px;
+    display: block;
+    padding: auto;
+}
+.div_title{
+    margin:left;
+    width: 200px;
+    display: block;
+    padding: auto;
+}
+.div_created{
+    margin: left;
+    width: 250px;
+    display: block;
+    padding: auto;
+}
+.div_actions{
+    margin: left;
+    width: 180px;
+    display: block;
+    padding: auto;
+    text-decoration: none;
+}
+.div_color{
+    color: orange;
+    border-bottom: 2px solid orange;
+    width: 680px;
+}
+.edit_color{
+    color: red;
+}
+a{
+    text-decoration: none;
+}

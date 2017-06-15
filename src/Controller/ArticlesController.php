@@ -22,7 +22,10 @@
             $this->set('articles', $this->Articles->find('all'));
         }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/KiyofumiMori
         public function view($id)
         {
             //$article = $this->Articles->get($id);
@@ -55,6 +58,7 @@
                     return $this->redirect(['action' => 'index']);
                 }
                 $this->Flash->error(__('Unable to update your article.'));
+<<<<<<< HEAD
 =======
     public function add()
     {
@@ -65,6 +69,8 @@
                 $this->Flash->success(__('Your article has been saved.'));
                 return $this->redirect(['action' => 'index']);
 >>>>>>> origin/tamura_nozomu
+=======
+>>>>>>> origin/KiyofumiMori
             }
 
             $this->set('article', $article);

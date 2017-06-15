@@ -17,7 +17,7 @@ class ArticlesController extends AppController
 
     public function index()
     {
-        $this->set('articles', $this->Articles->find('all'));
+        $this->set('articles', $this->Articles->find('all')->contain(['Comments']));
     }
 
     public function view($id)
@@ -28,7 +28,7 @@ class ArticlesController extends AppController
 
         $this->loadModel('Comments');
         $comment_entity = $this->Comments->newEntity($this->request->data);
-        $this->set('comment_entity', $comment_entity);
+        $this->set(compact('comment_entity'));
     }
 
     public function add()

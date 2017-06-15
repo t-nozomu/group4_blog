@@ -7,6 +7,7 @@
         <th>Id</th>
         <th>Title</th>
         <th>Created</th>
+        <th>Comments</th>
         <th>Actions</th>
     </tr>
 
@@ -20,6 +21,9 @@
         </td>
         <td>
             <?= $article->created->format(DATE_RFC850) ?>
+        </td>
+        <td>
+            <?= count($article->comments) ?>
         </td>
         <td>
             <?= $this->Form->postLink(

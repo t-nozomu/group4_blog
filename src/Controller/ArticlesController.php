@@ -25,6 +25,10 @@ class ArticlesController extends AppController
         //$article = $this->Articles->get($id);
         $article = $this->Articles->find('all')->contain(['Comments'])->where(['id'=>$id])->first();
         $this->set('article',$article);
+
+        $this->loadModel('Comments');
+        $comment_entity = $this->Comments->newEntity($this->request->data);
+        $this->set('comment_entity', $comment_entity);
     }
 
     public function add()

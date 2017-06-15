@@ -75,15 +75,13 @@ class CommentsController extends AppController
      */
     public function edit($id = null)
     {
-        $comment = $this->Comments->get($id, [
-            'contain' => []
-        ]);
+        $comment = $this->Comments->get($id);
         if ($this->request->is(['patch', 'post', 'put'])) {
             $comment = $this->Comments->patchEntity($comment, $this->request->getData());
             if ($this->Comments->save($comment)) {
                 $this->Flash->success(__('The comment has been saved.'));
 
-                return $this->redirect(['action' => 'index']);
+                return $this->redirect(['controller'=>'articles','action' => 'view',$comment->article_id]);
             }
             $this->Flash->error(__('The comment could not be saved. Please, try again.'));
         }
@@ -103,11 +101,11 @@ class CommentsController extends AppController
         $this->request->allowMethod(['post', 'delete']);
         $comment = $this->Comments->get($id);
         if ($this->Comments->delete($comment)) {
-            $this->Flash->success(__('The comment has been deleted.'));
+            $this->Flash->success(__('The article with id: {0} has been deleted.', h($id)));
         } else {
             $this->Flash->error(__('The comment could not be deleted. Please, try again.'));
         }
 
-        return $this->redirect(['action' => 'index']);
+        return $this->redirect(['controller'=>'articles','action' => 'view',$comment->article_id]);
     }
 }

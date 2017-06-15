@@ -16,7 +16,7 @@
         <th>Title</th>
         <th>Comments</th>
         <th>Created</th>
-        <th><?php if( !is_null($auth) ): ?>Actions<?php endif; ?></th>
+        <?php if( !is_null($auth) ): ?><th>Actions</th><?php endif; ?>
     </tr>
 
 <!-- ここで $articles クエリオブジェクトをループして、投稿情報を表示 -->

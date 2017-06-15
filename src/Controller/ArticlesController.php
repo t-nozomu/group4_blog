@@ -22,9 +22,11 @@
             $this->set('articles', $this->Articles->find('all'));
         }
 
-        public function view($id) {
-            $article = $this->Articles->get($id);
-            $this->set(compact('article'));
+        public function view($id)
+        {
+            //$article = $this->Articles->get($id);
+            $article = $this->Articles->find('all')->contain(['Comments'])->where(['id'=>$id])->first();
+            $this->set('article',$article);
         }
 
         public function add() {
@@ -90,5 +92,5 @@
 
             return parent::isAuthorized($user);
         }
-    } 
+    }
  ?>

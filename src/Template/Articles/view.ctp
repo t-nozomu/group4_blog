@@ -38,7 +38,7 @@
         <div>handlename</div>
         <div>created</div>
         <div>body</div>
-        <div><?php if( is_null($auth) ): ?>action<?php endif; ?></div>
+        <div>action</div>
     </div>
             <?php foreach ($article->comments as $comment): ?>
     <div>
@@ -47,22 +47,44 @@
         <div><?= $comment->created->format('Y年m月d日 H:i:s') ?></div>
         <div><?= $comment->body ?></div>
         <div>
-            <?php if( is_null($auth) ): ?>
-                <?=$this->Form->postLink(
-                    'Delete',
-                    ['controller'=>'comments','action' => 'delete', $comment->id],
-                    ['onClick'=>'Dialog()'])
-                    ?>
-                    <?= $this->Html->link('Edit', ['controller'=>'comments','action' => 'edit', $comment->id]) ?>
-            <?php endif; ?>
-            <?= $this->Html->link('Edit', ['controller'=>'comments','action' => 'edit', $comment->id]) ?>
+            <a href="javascript:Dellog()">Delete</a>
+            <a href="javascript:Editlog()">Edit</a>
         </div>
     </div>
             <?php endforeach; ?>
 </div>
 
+
 <script type="text/javascript">
-    function Dialog(){
-        user = window.prompt("編集用パスワードを入力してください", "");
+    function Dellog(){
+            //window.alert("aaaaaaaa");
+            pswd = window.prompt("パスワード入力","");
+            var form = document.createElement('form');
+            document.body.appendChild( form );
+            var input = document.createElement('input');
+            input.setAttribute('type','hidden');
+            input.setAttribute('name',password);
+            input.setAttribute('value',pswd);
+            form.appendChild(input);
+            form.setAttribute('action' , '/group4_blog/comments/delete/<?= $comment->id ?>');
+            form.setAttribute('method','post');
+            form.submit();
+
+    }
+
+    function Editlog(){
+            //window.alert("aaaaaaaa");
+            pswd = window.prompt("パスワード入力","");
+            var form = document.createElement('form');
+            document.body.appendChild( form );
+            var input = document.createElement('input');
+            input.setAttribute('type','hidden');
+            input.setAttribute('name',password);
+            input.setAttribute('value',pswd);
+            form.appendChild(input);
+            form.setAttribute('action' , '/group4_blog/comments/edit/<?= $comment->id ?>');
+            form.setAttribute('method','post');
+            form.submit();
+
     }
 </script>

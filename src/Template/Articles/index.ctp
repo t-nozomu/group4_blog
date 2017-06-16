@@ -15,7 +15,8 @@
     <div class="div_main div_color">
         <div class="div_id">Id</div>
         <div class="div_title">Title</div>
-        <div class="div_created">Created</div>
+            <div class="div_comments">Comments</div>
+                <div class="div_created">Created</div>
         <div class="div_actions"><?php if( !is_null($auth) ): ?>Actions<?php endif; ?></div>
     </div>
 
@@ -28,6 +29,7 @@
         <div class="div_title">
             <?= $this->Html->link($article->title, ['action' => 'view', $article->id]) ?>
         </div>
+                <div class="div_comments"><?= count($article->comments) ?></div>
         <div class="div_created">
             <?= $article->created->format('Y年m月d日 H:i:s') ?>
         </div>

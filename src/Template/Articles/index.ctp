@@ -21,13 +21,6 @@
     </div>
 
 </div>
-    <div>
-        <div>Id</div>
-        <div>Title</div>
-        <div>Comments</div>
-        <div>Created</div>
-        <div><?php if( !is_null($auth) ): ?>Actions<?php endif; ?></div>
-    </div>
 
 
 <!-- ここで $articles クエリオブジェクトをループして、投稿情報を表示 -->

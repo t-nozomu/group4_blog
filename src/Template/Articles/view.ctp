@@ -24,30 +24,30 @@
 ?>
 
 <h1>Comment</h1>
-<table>
- <tr>
- <th>Id</th>
- <th>handlename</th>
- <th>created</th>
- <th>body</th>
- <th><?php if( is_null($auth) ): ?>action<?php endif; ?></th>
- </tr>
- <?php foreach ($article->comments as $comment): ?>
- <tr>
- <td><?= $comment->id ?></td>
- <td><?= $comment->handlename ?></td>
- <td><?= $comment->created->format('Y年m月d日 H:i:s') ?></td>
- <td><?= $comment->body ?></td>
- <td>
-    <?php if( is_null($auth) ): ?>
-    <?= $this->Form->postLink(
-        'Delete',
-        ['controller'=>'comments','action' => 'delete', $comment->id],
-        ['confirm' => 'Are you sure?'])
-    ?>
-    <?php endif; ?>
-     <?= $this->Html->link('Edit', ['controller'=>'comments','action' => 'edit', $comment->id]) ?>
- </td>
- </tr>
- <?php endforeach; ?>
-</table>
+<div>
+    <div>
+        <div>Id</div>
+        <div>handlename</div>
+        <div>created</div>
+        <div>body</div>
+        <div><?php if( is_null($auth) ): ?>action<?php endif; ?></div>
+    </div>
+            <?php foreach ($article->comments as $comment): ?>
+    <div>
+        <div><?= $comment->id ?></div>
+        <div><?= $comment->handlename ?></div>
+        <div><?= $comment->created->format('Y年m月d日 H:i:s') ?></div>
+        <div><?= $comment->body ?></div>
+        <div>
+            <?php if( is_null($auth) ): ?>
+                <?= $this->Form->postLink(
+                    'Delete',
+                    ['controller'=>'comments','action' => 'delete', $comment->id],
+                    ['confirm' => 'Are you sure?'])
+                ?>
+            <?php endif; ?>
+            <?= $this->Html->link('Edit', ['controller'=>'comments','action' => 'edit', $comment->id]) ?>
+        </div>
+    </div>
+            <?php endforeach; ?>
+</div>

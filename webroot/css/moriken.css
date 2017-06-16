@@ -1,0 +1,68 @@
+/*背景色*/
+.div_haikei{
+    background-color: #FBFBF0;
+}
+/*文字フォント"Tahoma"*/
+div{
+    font-family: "Tahoma",sans-serif;
+}
+/*枠で囲む*/
+.div_box{
+    border: 4px double #EB5D00;
+    background-color: #f9f3eb;
+    margin: 2em 0;
+    padding: 1em;
+    width: 790px;
+}
+.div_box1{
+    border: 4px double #ebc9c9;
+    background-color: #edd0d0;
+    margin: 1em 0;
+    width:780px;
+}
+/*横並びにする*/
+.div_main{
+    display: -webkit-flex;
+    display: flex;
+}
+.div_id{
+    margin: left;
+    width:50px;
+    display: block;
+    padding: auto;
+}
+.div_title{
+    margin:left;
+    width: 230px;
+    display: block;
+    padding: auto;
+}
+.div_created{
+    margin: left;
+    width: 300px;
+    display: block;
+    padding: auto;
+}
+.div_actions{
+    margin: left;
+    width: 200px;
+    display: block;
+    padding: auto;
+    text-decoration: none;
+}
+.div_color{
+    color: orange;
+    border-bottom: 2px solid #EB5D00;
+    width: 780px;
+}
+.edit_color{
+    color: black;
+}
+.del_color{
+    color: red;
+}
+/*URLが付いている文字列*/
+a{
+    text-decoration: none;
+    color: #5D86FF;
+}

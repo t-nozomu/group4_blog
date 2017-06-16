@@ -34,7 +34,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
 </head>
 <body>
     <nav class="top-bar expanded" data-topbar role="navigation">
-        <h1><a href="/blog"><?= $this->fetch('title') ?></a></h1>
+        <h1><a href="/group4_blog"><?= $this->fetch('title') ?></a></h1>
     </nav>
     <?= $this->Flash->render() ?>
     <div class="container clearfix">

@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 <h1 class=title_name>Blog articles</h1>
 <?php if( is_null($auth) ): ?>
     <p><?= $this->Html->link('Login', ['controller' => 'Users', 'action' => 'login']) ?></p>
@@ -8,17 +8,13 @@
 <?php if( !is_null($auth) ): ?>
     <p><?= $this->Html->link('投稿', ['action' => 'add']) ?></p>
 <?php endif; ?>
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> f030860d633a322266a7f08d65b67145a5908baf
-=======
+
 
 <!-- File: src/Template/Articles/index.ctp (delete links added) -->
 
 <h1 class=title_name>Blog Articles</h1>
 <p><?= $this->Html->link('投稿', ['action' => 'add']) ?></p>
->>>>>>> origin/Hyoumori
+
 <div>
     <div class="div_main div_color">
         <div class="div_id">Id</div>
@@ -26,8 +22,7 @@
         <div class="div_created">Created</div>
         <div class="div_actions"><?php if( !is_null($auth) ): ?>Actions<?php endif; ?></div>
     </div>
-<<<<<<< HEAD
-=======
+
 <table>
     <tr>
         <th>Id</th>
@@ -36,9 +31,7 @@
         <th>Created</th>
         <th><?php if( !is_null($auth) ): ?>Actions<?php endif; ?></th>
     </tr>
->>>>>>> origin/KiyofumiMori
-=======
->>>>>>> f030860d633a322266a7f08d65b67145a5908baf
+
 
 <!-- ここで $articles クエリオブジェクトをループして、投稿情報を表示 -->
 

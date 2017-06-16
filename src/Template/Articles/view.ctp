@@ -18,15 +18,15 @@
 ?>
 
 <h1>Comment</h1>
-<table>
- <tr>
- <th>handlename</th>
- <th>body</th>
- </tr>
+<div>
+    <div>
+        <div>handlename</div>
+        <div>body</div>
+    </div>
  <?php foreach ($article->comments as $comment): ?>
- <tr>
- <td><?= $comment->handlename ?></td>
- <td><?= $comment->body ?></td>
- </tr>
+     <div>
+         <div><?= $comment->handlename ?></div>
+         <div><?= $comment->body ?></div>
+     </div>
  <?php endforeach; ?>
-</table>
+</div>

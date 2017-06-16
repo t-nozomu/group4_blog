@@ -19,7 +19,6 @@
         <div class="div_actions"><?php if( !is_null($auth) ): ?>Actions<?php endif; ?></div>
     </div>
 
-</div>
 
 <!-- ここで $articles クエリオブジェクトをループして、投稿情報を表示 -->
 <div>

@@ -26,7 +26,8 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
     </title>
     <?= $this->Html->meta('icon') ?>
 
-    <?= $this->Html->css('moriken.css') ?>
+    <?= $this->Html->css('base.css') ?>
+    <?= $this->Html->css('cake.css') ?>
 
     <?= $this->fetch('meta') ?>
     <?= $this->fetch('css') ?>
@@ -34,7 +35,22 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
 </head>
 <body>
     <nav class="top-bar expanded" data-topbar role="navigation">
+<<<<<<< HEAD
+        <ul class="title-area large-3 medium-4 columns">
+            <li class="name">
+                <h1><a href="/group4_blog">TOP</a></h1>
+
+            </li>
+        </ul>
+        <div class="top-bar-section">
+            <ul class="right">
+                <li><a target="_blank" href="http://book.cakephp.org/3.0/">Documentation</a></li>
+                <li><a target="_blank" href="http://api.cakephp.org/3.0/">API</a></li>
+            </ul>
+        </div>
+=======
         <h1><a href="/blog"><?= $this->fetch('title') ?></a></h1>
+>>>>>>> master
     </nav>
     <?= $this->Flash->render() ?>
     <div class="container clearfix">

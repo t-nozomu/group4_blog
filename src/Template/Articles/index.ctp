@@ -1,4 +1,3 @@
-
 <h1 class=title_name>Blog articles</h1>
 <?php if( is_null($auth) ): ?>
     <p><?= $this->Html->link('Login', ['controller' => 'Users', 'action' => 'login']) ?></p>
@@ -22,10 +21,10 @@
 
 </div>
 
-
 <!-- ここで $articles クエリオブジェクトをループして、投稿情報を表示 -->
 <div>
     <?php foreach ($articles as $article): ?>
+
     <div class="div_main">
         <div class="div_id"><?= $article->id ?></div>
         <div class="div_title">
@@ -47,5 +46,4 @@
     </div>
     <?php endforeach; ?>
 
-
-</div>
+</table>

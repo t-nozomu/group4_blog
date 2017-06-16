@@ -21,9 +21,7 @@ class ArticlesTable extends Table
     {
         $validator
             ->notEmpty('title')
-            ->requirePresence('title')
-            ->notEmpty('body')
-            ->requirePresence('body');
+            ->notEmpty('body');
 
         return $validator;
     }

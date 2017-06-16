@@ -14,20 +14,20 @@
             parent::initialize();
 
             $this->loadComponent('Flash'); // Include the FlashComponent
+            $this->set('auth', $this->Auth->user() );
         }
 
-        public function index() {
-            // $articles = $this->Articles->find('all'); modelのarticlesという変数をもってくる
-            // $this->set(compact('articles')); //set()を使い、controller から viewにデータを渡す
-            $this->set('articles', $this->Articles->find('all'));
-        }
+    public function index()
+    {
+        $this->set('articles', $this->Articles->find('all')->contain(['Comments']));
+    }
 
-        public function view($id)
-        {
-            //$article = $this->Articles->get($id);
-            $article = $this->Articles->find('all')->contain(['Comments'])->where(['id'=>$id])->first();
-            $this->set('article',$article);
-        }
+    public function view($id)
+    {
+        //$article = $this->Articles->get($id);
+        $article = $this->Articles->find('all')->contain(['Comments'])->where(['id'=>$id])->first();
+        $this->set('article',$article);
+    }
 
         public function add() {
             $article = $this->Articles->newEntity();
@@ -39,7 +39,6 @@
                     return $this->redirect(['action' => 'index']);
                 }
                 $this->Flash->error(__('Unable to add your article.'));
-
             }
         $this->set(compact('article'));
     }
@@ -55,6 +54,7 @@
                 }
                 $this->Flash->error(__('Unable to update your article.'));
             }
+            $this->set(compact('article'));
         }
 
 

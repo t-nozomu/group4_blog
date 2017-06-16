@@ -12,8 +12,6 @@
 
 <!-- File: src/Template/Articles/index.ctp (delete links added) -->
 
-<p><?= $this->Html->link('投稿', ['action' => 'add']) ?></p>
-
 <div>
     <div class="div_main div_color">
         <div class="div_id">Id</div>
@@ -22,18 +20,18 @@
         <div class="div_actions"><?php if( !is_null($auth) ): ?>Actions<?php endif; ?></div>
     </div>
 
-<table>
-    <tr>
-        <th>Id</th>
-        <th>Title</th>
-        <th>Comments</th>
-        <th>Created</th>
-        <th><?php if( !is_null($auth) ): ?>Actions<?php endif; ?></th>
-    </tr>
+</div>
+    <div>
+        <div>Id</div>
+        <div>Title</div>
+        <div>Comments</div>
+        <div>Created</div>
+        <div><?php if( !is_null($auth) ): ?>Actions<?php endif; ?></div>
+    </div>
 
 
 <!-- ここで $articles クエリオブジェクトをループして、投稿情報を表示 -->
-
+<div>
     <?php foreach ($articles as $article): ?>
     <div class="div_main">
         <div class="div_id"><?= $article->id ?></div>

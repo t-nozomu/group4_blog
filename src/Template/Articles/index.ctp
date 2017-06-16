@@ -1,11 +1,3 @@
-<<<<<<< HEAD
-<!-- File: src/Template/Articles/index.ctp (delete links added) -->
-
-<h1>Blog articles</h1>
-<p><?= $this->Html->link('Login', ['controller' => 'Users', 'action' => 'login']) ?></p>
-<p><?= $this->Html->link('投稿', ['action' => 'add']) ?></p>
-=======
-
 <h1 class=title_name>Blog articles</h1>
 <?php if( is_null($auth) ): ?>
     <p><?= $this->Html->link('Login', ['controller' => 'Users', 'action' => 'login']) ?></p>
@@ -27,49 +19,12 @@
         <div class="div_actions"><?php if( !is_null($auth) ): ?>Actions<?php endif; ?></div>
     </div>
 
-<<<<<<< HEAD
 </div>
-=======
->>>>>>> master
-<table>
-    <tr>
-        <th>Id</th>
-        <th>Title</th>
-        <th>Comments</th>
-        <th>Created</th>
-        <th><?php if( !is_null($auth) ): ?>Actions<?php endif; ?></th>
-    </tr>
-<<<<<<< HEAD
-=======
->>>>>>> kishino
-
->>>>>>> master
 
 <!-- ここで $articles クエリオブジェクトをループして、投稿情報を表示 -->
 <div>
     <?php foreach ($articles as $article): ?>
-<<<<<<< HEAD
-    <tr>
-        <td><?= $article->id ?></td>
-        <td>
-            <?= $this->Html->link($article->title, ['action' => 'view', $article->id])?>
 
-        </td>
-
-        <td>
-            <?= $article->created->format('Y年m月d日 H:i:s') ?>
-        </td>
-        <td>
-            <?= $this->Form->postLink(
-                'Delete',
-                ['action' => 'delete', $article->id],
-                ['confirm' => 'Are you sure?'])
-            ?>
-            <?= $this->Html->link('Edit', ['action' => 'edit', $article->id]) ?>
-        </td>
-
-    </tr>
-=======
     <div class="div_main">
         <div class="div_id"><?= $article->id ?></div>
         <div class="div_title">
@@ -89,7 +44,6 @@
             <?php endif; ?>
         </div>
     </div>
->>>>>>> master
     <?php endforeach; ?>
 
 </table>

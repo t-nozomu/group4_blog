@@ -81,20 +81,22 @@ class CommentsController extends AppController
      */
     public function edit($id = null)
     {
-        $comment = $this->Comments->get($id);
-        if ($this->request->is(['patch', 'post', 'put'])) {
-            $comment = $this->Comments->patchEntity($comment, $this->request->getData());
-            if ($this->Comments->save($comment)) {
-                $this->Flash->success(__('The comment has been saved.'));
 
-                return $this->redirect(['controller'=>'articles','action' => 'view',$comment->article_id]);
+        if(isset($commnet->password) && !empty($commnet->password) && $inputpassword === isset($this->request->data['password'])) {
+            $comment = $this->Comments->get($id);
+            if ($this->request->is(['patch', 'post', 'put'])) {
+                $comment = $this->Comments->patchEntity($comment, $this->request->getData());
+                if ($this->Comments->save($comment)) {
+                    $this->Flash->success(__('The comment has been saved.'));
+
+                    return $this->redirect(['controller'=>'articles','action' => 'view',$comment->article_id]);
+                }
+                $this->Flash->error(__('The comment could not be saved. Please, try again.'));
             }
-            $this->Flash->error(__('The comment could not be saved. Please, try again.'));
+            $this->set(compact('comment'));
+            $this->set('_serialize', ['comment']);
         }
-        $this->set(compact('comment'));
-        $this->set('_serialize', ['comment']);
     }
-
     /**
      * Delete method
      *
@@ -104,14 +106,17 @@ class CommentsController extends AppController
      */
     public function delete($id = null)
     {
-        $this->request->allowMethod(['post', 'delete']);
-        $comment = $this->Comments->get($id);
-        if ($this->Comments->delete($comment)) {
-            $this->Flash->success(__('The article with id: {0} has been deleted.', h($id)));
-        } else {
-            $this->Flash->error(__('The comment could not be deleted. Please, try again.'));
-        }
 
-        return $this->redirect(['controller'=>'articles','action' => 'view',$comment->article_id]);
+        if(isset($commnet->password) && !empty($commnet->password) && isset($this->request->data['password'])) {
+            $this->request->allowMethod(['post', 'delete']);
+            $comment = $this->Comments->get($id);
+            if ($this->Comments->delete($comment)) {
+                $this->Flash->success(__('The article with id: {0} has been deleted.', h($id)));
+            } else {
+                $this->Flash->error(__('The comment could not be deleted. Please, try again.'));
+            }
+
+            return $this->redirect(['controller'=>'articles','action' => 'view',$comment->article_id]);
+        }
     }
 }

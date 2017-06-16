@@ -1,5 +1,13 @@
 <!-- File: src/Template/Articles/view.ctp -->
 <h1><?= h($article->title) ?></h1>
+<td>
+    <?= $this->Form->postLink(
+        'Delete',
+        ['action' => 'delete', $article->id],
+        ['confirm' => 'Are you sure?'])
+    ?>
+    <?= $this->Html->link('Edit', ['action' => 'edit', $article->id]) ?>
+</td>
 <p> <?= $article->created->format('Y年m月d日 H:i:s') ?></p>
 <p> <?php echo nl2br(h($article->body)) ?></p>
 

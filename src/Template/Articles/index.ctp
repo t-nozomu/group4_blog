@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <h1 class=title_name>Blog articles</h1>
 <?php if( is_null($auth) ): ?>
     <p><?= $this->Html->link('Login', ['controller' => 'Users', 'action' => 'login']) ?></p>
@@ -11,6 +12,13 @@
 <<<<<<< HEAD
 =======
 >>>>>>> f030860d633a322266a7f08d65b67145a5908baf
+=======
+
+<!-- File: src/Template/Articles/index.ctp (delete links added) -->
+
+<h1 class=title_name>Blog Articles</h1>
+<p><?= $this->Html->link('投稿', ['action' => 'add']) ?></p>
+>>>>>>> origin/Hyoumori
 <div>
     <div class="div_main div_color">
         <div class="div_id">Id</div>

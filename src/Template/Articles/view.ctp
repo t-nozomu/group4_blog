@@ -48,14 +48,21 @@
         <div><?= $comment->body ?></div>
         <div>
             <?php if( is_null($auth) ): ?>
-                <?= $this->Form->postLink(
+                <?=$this->Form->postLink(
                     'Delete',
                     ['controller'=>'comments','action' => 'delete', $comment->id],
-                    ['confirm' => 'Are you sure?'])
-                ?>
+                    ['onClick'=>'Dialog()'])
+                    ?>
+                    <?= $this->Html->link('Edit', ['controller'=>'comments','action' => 'edit', $comment->id]) ?>
             <?php endif; ?>
             <?= $this->Html->link('Edit', ['controller'=>'comments','action' => 'edit', $comment->id]) ?>
         </div>
     </div>
             <?php endforeach; ?>
 </div>
+
+<script type="text/javascript">
+    function Dialog(){
+        user = window.prompt("編集用パスワードを入力してください", "");
+    }
+</script>

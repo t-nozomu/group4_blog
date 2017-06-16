@@ -26,11 +26,11 @@
 <h1>Comment</h1>
 <table>
  <tr>
-<th>Id</th>
+ <th>Id</th>
  <th>handlename</th>
  <th>created</th>
  <th>body</th>
- <th>action</th>
+ <th><?php if( is_null($auth) ): ?>action<?php endif; ?></th>
  </tr>
  <?php foreach ($article->comments as $comment): ?>
  <tr>

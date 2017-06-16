@@ -8,14 +8,17 @@
     <p><?= $this->Html->link('投稿', ['action' => 'add']) ?></p>
 <?php endif; ?>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> f030860d633a322266a7f08d65b67145a5908baf
 <div>
     <div class="div_main div_color">
         <div class="div_id">Id</div>
         <div class="div_title">Title</div>
         <div class="div_created">Created</div>
-        <div class="div_actions">Actions</div>
-
+        <div class="div_actions"><?php if( !is_null($auth) ): ?>Actions<?php endif; ?></div>
     </div>
+<<<<<<< HEAD
 =======
 <table>
     <tr>
@@ -26,6 +29,8 @@
         <th><?php if( !is_null($auth) ): ?>Actions<?php endif; ?></th>
     </tr>
 >>>>>>> origin/KiyofumiMori
+=======
+>>>>>>> f030860d633a322266a7f08d65b67145a5908baf
 
 <!-- ここで $articles クエリオブジェクトをループして、投稿情報を表示 -->
 
@@ -39,12 +44,14 @@
             <?= $article->created->format('Y年m月d日 H:i:s') ?>
         </div>
         <div class="div_actions">
-            <?= $this->Form->postLink(
-                'Delete',
-                ['action' => 'delete', $article->id],
-                ['confirm' => "No."."$article->id"."の「"."$article->title"."」を削除しますか？"])
-            ?>
-            <span class="edit_color"><?= $this->Html->link('Edit', ['action' => 'edit', $article->id],['class'=>'edit_color']) ?></span>
+            <?php if( !is_null($auth) ): ?>
+                <?= $this->Form->postLink(
+                    'Delete',
+                    ['action' => 'delete', $article->id],
+                    ['confirm' => "No."."$article->id"."の「"."$article->title"."」を削除しますか？"])
+                ?>
+                    <span class="edit_color"><?= $this->Html->link('Edit', ['action' => 'edit', $article->id],['class'=>'edit_color']) ?></span>
+            <?php endif; ?>
         </div>
     </div>
     <?php endforeach; ?>

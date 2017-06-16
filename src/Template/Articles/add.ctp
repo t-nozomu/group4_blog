@@ -1,10 +1,8 @@
-<!-- File: src/Template/Articles/add.ctp -->
-
-<h1>Add Article</h1>
-<?php
-    echo $this->Form->create($article);
-    echo $this->Form->control('title');
-    echo $this->Form->control('body', ['rows' => '3']);
-    echo $this->Form->button(__('Save Article'));
-    echo $this->Form->end();
-?>
+<div class="add_t"><h1>Add Article</h1></div>
+<div class="add_box">
+    <?= $this->Form->create($article) ?>
+    <div class="add_title"><?= $this->Form->control('title') ?></div>
+    <div class="add_contents"><?= $this->Form->control('Contents', ['rows' => '3']) ?></div>
+    <div><?= $this->Form->button(__('Add')) ?></div>
+    <?= $this->Form->end() ?>
+</div>

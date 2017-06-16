@@ -1,11 +1,11 @@
 <!-- File: src/Template/Articles/add.ctp -->
 
 <h1>記事投稿</h1>
-<?php
-    echo $this->Form->create($article);
-    echo $this->Form->control('title');
-    echo $this->Form->control('body', ['rows' => '15']);
-    echo $this->Form->button(__('投稿'));
-    echo $this->Form->button('戻る',array('onclick' => 'history.back(); return false;'));
-    echo $this->Form->end();
-?>
+<div class="add_t"><h1>Add Article</h1></div>
+<div class="add_box">
+    <?= $this->Form->create($article) ?>
+    <div class="add_title"><?= $this->Form->control('title') ?></div>
+    <div class="add_contents"><?= $this->Form->control('Contents', ['rows' => '3']) ?></div>
+    <div><?= $this->Form->button(__('Add')) ?></div>
+    <?= $this->Form->end() ?>
+</div>

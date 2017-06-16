@@ -1,7 +1,24 @@
-
-/*blogの名前*/
-.title_name{
-    color : orange;
+/*背景色*/
+.div_haikei{
+    background-color: #FBFBF0;
+}
+/*文字フォント"Tahoma"*/
+div{
+    font-family: "Tahoma",sans-serif;
+}
+/*枠で囲む*/
+.div_box{
+    border: 4px double #EB5D00;
+    background-color: #f9f3eb;
+    margin: 2em 0;
+    padding: 1em;
+    width: 920px;
+}
+.div_box1{
+    border: 4px double #ebc9c9;
+    background-color: #edd0d0;
+    margin: 1em 0;
+    width:900px;
 }
 /*横並びにする*/
 .div_main{
@@ -10,37 +27,130 @@
 }
 .div_id{
     margin: left;
-    width:50px;
+    width:70px;
     display: block;
     padding: auto;
 }
 .div_title{
     margin:left;
-    width: 200px;
+    width: 250px;
+    display: block;
+    padding: auto;
+}
+.div_comments{
+    margin:left;
+    width: 100px;
     display: block;
     padding: auto;
 }
 .div_created{
     margin: left;
-    width: 250px;
+    width: 300px;
     display: block;
     padding: auto;
 }
 .div_actions{
     margin: left;
-    width: 180px;
+    width: 200px;
     display: block;
     padding: auto;
     text-decoration: none;
 }
 .div_color{
     color: orange;
-    border-bottom: 2px solid orange;
-    width: 680px;
+    border-bottom: 2px solid #EB5D00;
+    width: 920px;
 }
 .edit_color{
+    color: black;
+}
+.del_color{
     color: red;
 }
+/*URLが付いている文字列*/
 a{
     text-decoration: none;
+    color: #5D86FF;
+}
+
+
+/*記事投稿画面css*/
+.add_t{
+    text-align: center;
+}
+.add_box{
+    border: 4px double #EB5D00;
+    background-color: #edd0d0;
+    margin: auto;
+    padding: 1em;
+    width: 460px;
+    height: 480px;
+}
+/*title設定*/
+input#title{
+    width:450px;
+    height: 20px;
+    margin-top: 5px;
+    border: 0;
+    padding: 5px;
+    font-size: 1.3em;
+    background-color: #f9f2f2;
+}
+.add_title{
+    width:50px;
+}
+/*Contents設定*/
+textarea#contents{
+    width: 450px;
+    margin-top: 5px;
+    height: 350px;
+    border: 0;
+    padding: 5px;
+    font-size: 1.3em;
+    background-color: #f9f2f2;
+}
+.add_contents{
+    width:80px;
+    margin-top: 20px;
+}
+/*edit画面設定*/
+.edit_t{
+    text-align: center;
+}
+.edit_box{
+    border: 4px double #EB5D00;
+    background-color: #edd0d0;
+    margin: auto;
+    padding: 1em;
+    width: 460px;
+    height: 480px;
+}
+.edit_title{
+    width: 50px;
+}
+.edit_contents{
+    width: 80px;
+    margin-top: 20px;
+}
+
+
+/*記事画面*/
+.view_box{
+    border: 4px double #EB5D00;
+    background-color: #edd0d0;
+    margin: auto;
+    padding: 1em;
+    width: 700px;
+    height: 120px;
+}
+.view_box1{
+    display: flex;
+}
+.view_title{
+    text-align: left;
+    font-size: 20px;
+}
+.view_time{
+    text-align: right;
+
 }

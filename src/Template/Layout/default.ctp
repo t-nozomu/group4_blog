@@ -21,7 +21,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
     <?= $this->Html->charset() ?>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
-        <?= $cakeDescription ?>:
+        <?php $this->assign('title','G4')?>
         <?= $this->fetch('title') ?>
     </title>
     <?= $this->Html->meta('icon') ?>
@@ -34,7 +34,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
 </head>
 <body>
     <nav class="top-bar expanded" data-topbar role="navigation">
-        <h1><a href="/blog"><?= $this->fetch('title') ?></a></h1>
+        <h1><a href="/group4_blog"><?= $this->fetch('title') ?></a></h1>
     </nav>
     <?= $this->Flash->render() ?>
     <div class="container clearfix">

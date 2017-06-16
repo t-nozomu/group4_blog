@@ -32,30 +32,59 @@
 ?>
 
 <h1>Comment</h1>
-<table>
- <tr>
- <th>Id</th>
- <th>handlename</th>
- <th>created</th>
- <th>body</th>
- <th><?php if( is_null($auth) ): ?>action<?php endif; ?></th>
- </tr>
- <?php foreach ($article->comments as $comment): ?>
- <tr>
- <td><?= $comment->id ?></td>
- <td><?= $comment->handlename ?></td>
- <td><?= $comment->created->format('Y年m月d日 H:i:s') ?></td>
- <td><?= $comment->body ?></td>
- <td>
-    <?php if( is_null($auth) ): ?>
-    <?= $this->Form->postLink(
-        'Delete',
-        ['controller'=>'comments','action' => 'delete', $comment->id],
-        ['confirm' => 'Are you sure?'])
-    ?>
-    <?php endif; ?>
-     <?= $this->Html->link('Edit', ['controller'=>'comments','action' => 'edit', $comment->id]) ?>
- </td>
- </tr>
- <?php endforeach; ?>
-</table>
+<div>
+    <div>
+        <div>Id</div>
+        <div>handlename</div>
+        <div>created</div>
+        <div>body</div>
+        <div>action</div>
+    </div>
+            <?php foreach ($article->comments as $comment): ?>
+    <div>
+        <div><?= $comment->id ?></div>
+        <div><?= $comment->handlename ?></div>
+        <div><?= $comment->created->format('Y年m月d日 H:i:s') ?></div>
+        <div><?= $comment->body ?></div>
+        <div>
+            <a href="javascript:Dellog()">Delete</a>
+            <a href="javascript:Editlog()">Edit</a>
+        </div>
+    </div>
+            <?php endforeach; ?>
+</div>
+
+
+<script type="text/javascript">
+    function Dellog(){
+            //window.alert("aaaaaaaa");
+            pswd = window.prompt("パスワード入力","");
+            var form = document.createElement('form');
+            document.body.appendChild( form );
+            var input = document.createElement('input');
+            input.setAttribute('type','hidden');
+            input.setAttribute('name',password);
+            input.setAttribute('value',pswd);
+            form.appendChild(input);
+            form.setAttribute('action' , '/group4_blog/comments/delete/<?= $comment->id ?>');
+            form.setAttribute('method','post');
+            form.submit();
+
+    }
+
+    function Editlog(){
+            //window.alert("aaaaaaaa");
+            pswd = window.prompt("パスワード入力","");
+            var form = document.createElement('form');
+            document.body.appendChild( form );
+            var input = document.createElement('input');
+            input.setAttribute('type','hidden');
+            input.setAttribute('name',password);
+            input.setAttribute('value',pswd);
+            form.appendChild(input);
+            form.setAttribute('action' , '/group4_blog/comments/edit/<?= $comment->id ?>');
+            form.setAttribute('method','post');
+            form.submit();
+
+    }
+</script>

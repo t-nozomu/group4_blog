@@ -12,8 +12,6 @@
 
 <!-- File: src/Template/Articles/index.ctp (delete links added) -->
 
-<p><?= $this->Html->link('投稿', ['action' => 'add']) ?></p>
-
 <div>
     <div class="div_main div_color">
         <div class="div_id">Id</div>

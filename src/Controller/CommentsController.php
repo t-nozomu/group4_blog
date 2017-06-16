@@ -75,7 +75,7 @@ class CommentsController extends AppController
     public function edit($id = null)
     {
         $comment = $this->Comments->get($id);
-        if ($this->request->is(['patch', 'post', 'put'])) {
+        if ($this->request->is(['patch', 'post', 'put'])&& !isset($_POST["password"])) {
             $comment = $this->Comments->patchEntity($comment, $this->request->getData());
             if ($this->Comments->save($comment)) {
                 $this->Flash->success(__('The comment has been saved.'));
@@ -85,7 +85,6 @@ class CommentsController extends AppController
             $this->Flash->error(__('The comment could not be saved. Please, try again.'));
         }
         $this->set(compact('comment'));
-        $this->set('_serialize', ['comment']);
     }
 
     /**

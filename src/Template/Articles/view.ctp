@@ -30,8 +30,8 @@
  <td>
  <?=$this->Form->postLink(
      'Delete',
-     ['controller'=>'comments','action' => 'delete', $comment->id]
-     ['onClick'=>"Dialog"])
+     ['controller'=>'comments','action' => 'delete', $comment->id],
+     ['onClick'=>'Dialog()'])
      ?>
      <?= $this->Html->link('Edit', ['controller'=>'comments','action' => 'edit', $comment->id]) ?>
  </td>
@@ -40,6 +40,6 @@
 </table>
 <script type="text/javascript">
     function Dialog(){
-        user = window.prompt("ユーザー名を入力してください", "");
+        user = window.prompt("編集用パスワードを入力してください", "");
     }
 </script>

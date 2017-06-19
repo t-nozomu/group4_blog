@@ -64,34 +64,44 @@
 
 <script type="text/javascript">
     function Dellog(){
-            //window.alert("aaaaaaaa");
-            pswd = window.prompt("パスワード入力","");
+            var pswd = window.prompt("パスワードを入力してください","");
+            if(pswd != null){
             var form = document.createElement('form');
             document.body.appendChild( form );
-            var input = document.createElement('input');
-            input.setAttribute('type','hidden');
-            input.setAttribute('name',password);
-            input.setAttribute('value',pswd);
-            form.appendChild(input);
             form.setAttribute('action' , '/group4_blog/comments/delete/<?= $comment->id ?>');
             form.setAttribute('method','post');
+            var input = document.createElement('input');
+            input.setAttribute('type','hidden');
+            input.setAttribute('name','password');
+            input.setAttribute('value',pswd);
+            form.appendChild(input);
+            // console.log(input);
             form.submit();
+
+        }
+        else{
+            window.alert("入力をキャンセルします");
+        }
 
     }
 
     function Editlog(){
             //window.alert("aaaaaaaa");
-            pswd = window.prompt("パスワード入力","");
+            if(pswd = window.prompt("パスワード入力","")){
             var form = document.createElement('form');
             document.body.appendChild( form );
             var input = document.createElement('input');
             input.setAttribute('type','hidden');
-            input.setAttribute('name',password);
+            input.setAttribute('name','password');
             input.setAttribute('value',pswd);
             form.appendChild(input);
             form.setAttribute('action' , '/group4_blog/comments/edit/<?= $comment->id ?>');
             form.setAttribute('method','post');
             form.submit();
+        }
+        else{
+            window.alert("入力をキャンセルします");
+        }
 
     }
 </script>

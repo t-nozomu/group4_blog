@@ -75,14 +75,32 @@ class CommentsController extends AppController
     public function edit($id = null)
     {
         $comment = $this->Comments->get($id);
-        if ($this->request->is(['patch', 'post', 'put']) && !empty($_POST["password"])) {
-            $comment = $this->Comments->patchEntity($comment, $this->request->getData());
-            if ($this->Comments->save($comment)) {
-                $this->Flash->success(__('The comment has been saved.'));
-
+        if(!isset($this->request->data['handlename'])){
+            if(isset($this->request->data['password'])){
+                if($this->request->data['password'] === $comment->password){
+                    $this->Flash->success(__('パスワード認証完了'));
+                }
+                else{
+                    $this->Flash->error(__('パスワードに誤りがあります'));
+                    return $this->redirect(['controller'=>'articles','action' => 'view',$comment->article_id]);
+                }
+            }
+            else{
+                $this->Flash->error(__('不正なアクセスを確認'));
                 return $this->redirect(['controller'=>'articles','action' => 'view',$comment->article_id]);
             }
-            $this->Flash->error(__('The comment could not be saved. Please, try again.'));
+
+        }
+        else{
+            if ($this->request->is(['patch', 'post', 'put'])) {
+                $comment = $this->Comments->patchEntity($comment, $this->request->getData());
+                if ($this->Comments->save($comment)) {
+                    $this->Flash->success(__('The comment has been saved.'));
+
+                    return $this->redirect(['controller'=>'articles','action' => 'view',$comment->article_id]);
+                }
+                $this->Flash->error(__('The comment could not be saved. Please, try again.'));
+            }
         }
         $this->set(compact('comment'));
     }
@@ -96,13 +114,19 @@ class CommentsController extends AppController
      */
     public function delete($id = null)
     {
-            $this->request->allowMethod(['post', 'delete']);
-            $comment = $this->Comments->get($id);
-                    if ($this->Comments->delete($comment)) {
-                        $this->Flash->success(__('The article with id: {0} has been deleted.', h($id)));
-                    } else {
-                        $this->Flash->error(__('The comment could not be deleted. Please, try again.'));
-                    }
-                return $this->redirect(['controller'=>'articles','action' => 'view',$comment->article_id]);
+        $this->request->allowMethod(['post', 'delete']);
+        $comment = $this->Comments->get($id);
+        if($this->request->data['password'] === $comment->password){
+            if ($this->Comments->delete($comment)) {
+                $this->Flash->success(__('The article with id: {0} has been deleted.', h($id)));
+            }
+            else {
+                $this->Flash->error(__('The comment could not be deleted. Please, try again.'));
+            }
+        }
+        else{
+            $this->Flash->error(__('パスワードに誤りがあります'));
+        }
+        return $this->redirect(['controller'=>'articles','action' => 'view',$comment->article_id]);
     }
 }

@@ -1,0 +1,72 @@
+/*view.ctp*/
+/*記事画面*/
+.view_box{
+    border: 4px double #EB5D00;
+    background-color: #edd0d0;
+    margin: auto;
+    padding: 1em;
+    width: 700px;
+    height: 120px;
+}
+.view_box1{
+    padding: 5px;
+    display: flex;
+    justify-content: flex-end;
+}
+.view_title{
+    text-align: left;
+    font-size: 20px;
+}
+.view_time{
+    margin-left: 5px;
+    text-align: right;
+}
+/*コメント記入欄の設定*/
+.view_box2{
+    border: 4px double #EB5D00;
+    background-color: #edd0d0;
+    margin: auto;
+    padding: 1em;
+    width: 700px;
+    height: auto;
+}
+
+.view_box2 label{
+    width:200px;
+    margin-right:50px;
+}
+
+.view_body1{
+    vertical-align: middle;
+    text-align:left;
+    margin:10px 0;
+}
+
+input#name{
+    margin-left: 39px;
+    width: 200px;
+    margin-top: 5px;
+    height: 10px;
+    border: 0;
+    padding: 5px;
+    font-size: 1.3em;
+    background-color: #f9f2f2;
+}
+textarea#body{
+    vertical-align: middle;
+    letter-spacing: normal;
+}
+
+
+/*Comment一覧設定*/
+.view_box3{
+    border: 4px double #EB5D00;
+    background-color: #edd0d0;
+    margin: auto;
+    padding: 1em;
+    width: 700px;
+    height: auto;
+}
+.view_comment{
+    display: flex;
+}

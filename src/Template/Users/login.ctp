@@ -1,9 +1,10 @@
+<?= $this->Html->css('login_style.css') ?>
 <div class="login_box">
     <center>
 <?= $this->Flash->render() ?>
 <?= $this->Form->create() ?>
 
-        <div ><?= __('Please enter your username and password') ?></div>
+        <div ><?= 'Please enter your username and password'?></div>
         <div class="login_username"><?= $this->Form->control('username') ?></div>
         <div class="login_password"><?= $this->Form->control('password') ?></div>
 

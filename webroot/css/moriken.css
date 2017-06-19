@@ -1,3 +1,4 @@
+/*index.ctp*/
 /*背景色*/
 .div_haikei{
     background-color: #FBFBF0;
@@ -33,7 +34,7 @@ div{
 }
 .div_title{
     margin:left;
-    width: 250px;
+    width: 240px;
     display: block;
     padding: auto;
 }
@@ -73,22 +74,9 @@ a{
     color: #5D86FF;
 }
 
-
-/*記事投稿画面css*/
-.add_t{
-    text-align: center;
-}
-.add_box{
-    border: 4px double #EB5D00;
-    background-color: #edd0d0;
-    margin: auto;
-    padding: 1em;
-    width: 460px;
-    height: 480px;
-}
 /*title設定*/
 input#title{
-    width:450px;
+    width:449.5px;
     height: 20px;
     margin-top: 5px;
     border: 0;
@@ -96,23 +84,14 @@ input#title{
     font-size: 1.3em;
     background-color: #f9f2f2;
 }
-.add_title{
-    width:50px;
-}
-/*Contents設定*/
-textarea#contents{
-    width: 450px;
-    margin-top: 5px;
-    height: 350px;
-    border: 0;
-    padding: 5px;
-    font-size: 1.3em;
+
+textarea{
+    resize:none;
     background-color: #f9f2f2;
+    border: 0;
+
 }
-.add_contents{
-    width:80px;
-    margin-top: 20px;
-}
+/*edit.ctp*/
 /*edit画面設定*/
 .edit_t{
     text-align: center;
@@ -139,59 +118,48 @@ textarea#contents{
 button{
     margin:0 5px;
 }
+/* エラーメッセージ表示 */
+div.message {
+    text-align: center;
+    cursor: pointer;
+    display: block;
+    font-weight: normal;
+    padding: 0 1.5rem 0 1.5rem;
+    transition: height 300ms ease-out 0s;
+    background-color: #a0d3e8;
+    color: #626262;
+    top: 15px;
+    right: 15px;
+    z-index: 999;
+    overflow: hidden;
+    height: 50px;
+    line-height: 2.5em;
+    box-radius: 5px;
+}
 
-/*記事画面*/
-.view_box{
-    border: 4px double #EB5D00;
-    background-color: #edd0d0;
-    margin: auto;
-    padding: 1em;
-    width: 700px;
-    height: 120px;
-}
-.view_box1{
-    display: flex;
-}
-.view_title{
-    text-align: left;
+div.message:before {
+    line-height: 0px;
     font-size: 20px;
+    height: 12px;
+    width: 12px;
+    border-radius: 15px;
+    text-align: center;
+    vertical-align: middle;
+    display: inline-block;
+    position: relative;
+    left: -11px;
+    color: #a0d3e8;
 }
-.view_time{
-    text-align: right;
 
+div.message.error {
+    background-color: #C3232D;
+    color: #FFF;
 }
 
-/*login画面設定*/
-.login_box{
-    border: 4px double #EB5D00;
-    background-color: #edd0d0;
-    margin: auto;
-    padding: 1em;
-    width: 400px;
-    height: 120px;
+div.message.hidden {
+    height: 0;
 }
-input#username{
-    margin-left: 15px;
-    width:200px;
-    height: 10px;
-    margin-top: 15px;
-    border: 0;
-    padding: 5px;
-    background-color: #f9f2f2;
-}
-input#password{
-    margin-left: 15px;
-    width:200px;
-    height: 10px;
-    margin-top: 15px;
-    margin-bottom: 17px;
-    border: 0;
-    padding: 5px;
-    background-color: #f9f2f2;
-}
-.login_username{
-    margin-right: 70px;
-}
-.login_password{
-    margin-right: 65px;
+/*group4_title設定*/
+.group4_title{
+    background-color: orange;
 }

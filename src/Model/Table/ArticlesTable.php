@@ -24,7 +24,10 @@ class ArticlesTable extends Table
         $validator
             ->notEmpty('title')
             ->add('title',[
-                'maxlen' => ['rule'=>['maxlength',20]]
+                'maxlen' => [
+                    'rule'=>['maxlength',20],
+                    'message' => '20文字以下にしてください'
+                ]
             ])
             ->notEmpty('body');
 

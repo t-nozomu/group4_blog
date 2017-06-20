@@ -27,7 +27,7 @@
 
     <?= $this->Form->create(null,['url'=>['controller'=>'comments','action'=>'add']]) ?>
     <?= $this->Form->input('handlename',['label'=>'Name','maxlength'=>20]) ?>
-    <div class="view_body1"><?= $this->Form->input('body', ['rows' => '7', 'cols' => '96','label'=>'Content','maxlength'=>400]) ?></div>
+    <div class="view_body1"><?= $this->Form->input('body', ['rows' => '7', 'cols' => '96','label'=>'Contents','maxlength'=>400]) ?></div>
     <div>
         <div><?=  $this->Form->input('password',array('placeholder' => "任意のPassを入力してください")) ?> </div>
         <div><?= "※このパスワードはコメント修正、削除時に必要になります。<br />" ?> </div>

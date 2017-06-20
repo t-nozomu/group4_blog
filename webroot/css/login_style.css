@@ -1,36 +1,40 @@
 /*login.ctp*/
 /*login画面設定*/
 .login_box{
+    font-size: 22px;
     border: 4px double #EB5D00;
     background-color: #edd0d0;
     margin: auto;
     padding: 1em;
-    width: 400px;
-    height: 120px;
+    width: 600px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
 }
 .login_username{
     margin-left: 15px;
-    width:200px;
+    width: 230px;
     height: 10px;
-    margin-top: 15px;
+    margin: 25px;
     border: 0;
-    padding: 5px;
+    padding: 10px;
 }
 .login_password{
     margin-left: 15px;
-    width:200px;
+    width: 230px;
     height: 10px;
-    margin-top: 15px;
-    margin-bottom: 17px;
+    margin: 25px;
     border: 0;
-    padding: 5px;
+    padding: 15px;
 }
-.login_username{
-    margin-right: 70px;
-}
-.login_password{
-    margin-right: 65px;
+.buttons{
+    margin: 30px;
+    display: flex;
+    justify-content: center;
 }
 button{
-    margin-top:50px;
+    width: 100px;
+    font-size: 18px;
+    border-radius: 6px;
+    /*box-shadow: inset 1px 3px 3px -3px rgba(0,0,0,0.5);*/
 }

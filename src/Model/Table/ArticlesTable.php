@@ -21,11 +21,14 @@ class ArticlesTable extends Table
     {
         $validator
             ->notEmpty('title')
-            ->requirePresence('title')
-            ->notEmpty('body')
-            ->requirePresence('body');
+            ->notEmpty('body');
 
         return $validator;
     }
+
+    public function isOwnedBy($articleId, $userId)
+    {
+        return $this->exists(['id' => $articleId, 'user_id' => $userId]);
+    }
 }
- ?>
+?>

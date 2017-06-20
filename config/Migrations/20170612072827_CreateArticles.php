@@ -30,6 +30,10 @@ class CreateArticles extends AbstractMigration
             'default' => null,
             'null' => false,
         ]);
+<<<<<<< HEAD
+
+=======
+>>>>>>> origin/KiyofumiMori
         $table->addColumn('user_id', 'integer', [
             'default' => null,
             'null' => false,

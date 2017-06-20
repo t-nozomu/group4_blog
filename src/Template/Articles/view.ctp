@@ -1,32 +1,106 @@
-<!-- File: src/Template/Articles/view.ctp -->
-<h1><?= h($article->title) ?></h1>
-<p><small>Created: <?= $article->created->format('Y年m月d日 H:i:s') ?></small></p>
-<p><?= h($article->body) ?></p>
 
+<?= $this->Html->css('view_style.css') ?>
+    <div><?= $this->Form->postLink(
+        '記事一覧へ',
+        ['action' => 'index'])?>
+    </div>
+<div class="view_box">
+    <div class="view_box1">
+    <div class="view_title">TITLE:<?= h($article->title) ?></div>
+        <div class="view_time">TIME:<?= $article->created->format('Y年m月d日 H:i:s') ?></div>
+        <div class="view_delete"><?= $this->Form->postLink(
+            'Delete',
+            ['action' => 'delete', $article->id],
+            ['confirm' => 'Are you sure?'])?>
+        </div>
+        <div><?= $this->Html->link('Edit', ['action' => 'edit', $article->id]) ?></div>
+    </div>
+
+        <div> <?php echo nl2br(h($article->body)) ?></div>
+
+
+</div>
 <!--heyheyhey-->
 <br>
-<br>
-<h1>コメント</h1>
-<?php
-    echo $this->Form->create(null,['url'=>['controller'=>'comments','action'=>'add']]);
-    echo $this->Form->input('handlename');
-    echo $this->Form->input('body', ['rows' => '3']);
-    echo $this->Form->input('password');
-    echo $this->Form->button(__('投稿'));
-    echo $this->Form->hidden('article_id',array('value'=>$article->id));
-    echo $this->Form->end();
-?>
+<div class="view_box2">
 
-<h1>Comment</h1>
-<div>
+    <?= $this->Form->create(null,['url'=>['controller'=>'comments','action'=>'add']]) ?>
+    <?= $this->Form->input('Name') ?>
+    <div class="view_body1"><?= $this->Form->input('body', ['rows' => '7', 'cols' => '80']) ?></div>
     <div>
-        <div>handlename</div>
-        <div>body</div>
+        <div><?=  $this->Form->input('password',array('placeholder' => "任意のPassを入力してください")) ?> </div>
+        <div><?= "※このパスワードはコメント修正、削除時に必要になります。<br />" ?> </div>
     </div>
- <?php foreach ($article->comments as $comment): ?>
-     <div>
-         <div><?= $comment->handlename ?></div>
-         <div><?= $comment->body ?></div>
-     </div>
- <?php endforeach; ?>
+
+    <?= $this->Form->button(__('投稿')) ?>
+    <?= $this->Form->hidden('article_id',array('value'=>$article->id)) ?>
+    <?= $this->Form->end() ?>
+
 </div>
+
+<br>
+<div class="">
+
+    <div>
+        <?php foreach ($article->comments as $comment): ?>
+        <div class="view_box5">
+            <div class="view_comment view_box4">
+
+                <div class="view_id">ID:<?= $comment->id ?></div>
+                <div class="view_hn">HN:<?= $comment->handlename ?></div>
+                <div class="view_time">TIME:<?= $comment->created->format('Y年m月d日 H:i:s') ?></div>
+
+                <div class="view_delete">
+                    <a href="javascript:Dellog()">Delete</a>
+                    <a href="javascript:Editlog()">Edit</a>
+                </div>
+            </div>
+            <div class = "view_contents"><div><?= $comment->body ?></div></div>
+        </div>
+        <?php endforeach; ?>
+    </div>
+</div>
+
+<script type="text/javascript">
+    function Dellog(){
+            var pswd = window.prompt("パスワードを入力してください","");
+            if(pswd != null){
+            var form = document.createElement('form');
+            document.body.appendChild( form );
+            form.setAttribute('action' , '/group4_blog/comments/delete/<?= $comment->id ?>');
+            form.setAttribute('method','post');
+            var input = document.createElement('input');
+            input.setAttribute('type','hidden');
+            input.setAttribute('name','password');
+            input.setAttribute('value',pswd);
+            form.appendChild(input);
+            // console.log(input);
+            form.submit();
+
+        }
+        else{
+            window.alert("入力をキャンセルします");
+        }
+
+    }
+
+    function Editlog(){
+            //window.alert("aaaaaaaa");
+            if(pswd = window.prompt("パスワード入力","")){
+            var form = document.createElement('form');
+            document.body.appendChild( form );
+            var input = document.createElement('input');
+            input.setAttribute('type','hidden');
+            input.setAttribute('name','password');
+            input.setAttribute('value',pswd);
+            form.appendChild(input);
+            form.setAttribute('action' , '/group4_blog/comments/edit/<?= $comment->id ?>');
+            form.setAttribute('method','post');
+            form.submit();
+        }
+        else{
+            window.alert("入力をキャンセルします");
+        }
+
+    }
+</script>

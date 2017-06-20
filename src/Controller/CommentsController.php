@@ -2,6 +2,7 @@
 namespace App\Controller;
 
 use App\Controller\AppController;
+use Cake\Event\Event;
 
 /**
  * Comments Controller
@@ -12,6 +13,12 @@ use App\Controller\AppController;
  */
 class CommentsController extends AppController
 {
+
+    public function beforeFilter(Event $event)
+    {
+        parent::beforeFilter($event);
+        $this->Auth->allow(['add', 'edit', 'delete']);
+    }
 
     /**
      * Index method
@@ -50,9 +57,9 @@ class CommentsController extends AppController
      */
     public function add()
     {
-         $comment = $this->Comments->newEntity();
+         $comment = $this->Comments->newEntity($this->request->data);
         if ($this->request->is('post')) {
-            $comment = $this->Comments->patchEntity($comment, $this->request->getData());
+            //$comment = $this->Comments->patchEntity($comment, $this->request->getData());
             if ($this->Comments->save($comment)) {
                 $this->Flash->success(__('The comment has been saved.'));
 
@@ -62,8 +69,7 @@ class CommentsController extends AppController
             $this->Flash->error(__('The comment could not be saved. Please, try again.'));
             $this->redirect(['controller'=>'articles','action' => 'view',$comment->article_id]);
         }
-        //$this->set(compact('comment'));
-        //$this->set('_serialize', ['comment']);
+        $this->set(compact('comment'));
     }
 
     /**
@@ -75,20 +81,35 @@ class CommentsController extends AppController
      */
     public function edit($id = null)
     {
-        $comment = $this->Comments->get($id, [
-            'contain' => []
-        ]);
-        if ($this->request->is(['patch', 'post', 'put'])) {
-            $comment = $this->Comments->patchEntity($comment, $this->request->getData());
-            if ($this->Comments->save($comment)) {
-                $this->Flash->success(__('The comment has been saved.'));
-
-                return $this->redirect(['action' => 'index']);
+        $comment = $this->Comments->get($id);
+        if(!isset($this->request->data['handlename'])){
+            if(isset($this->request->data['password'])){
+                if($this->request->data['password'] === $comment->password){
+                    $this->Flash->success(__('パスワード認証完了'));
+                }
+                else{
+                    $this->Flash->error(__('パスワードに誤りがあります'));
+                    return $this->redirect(['controller'=>'articles','action' => 'view',$comment->article_id]);
+                }
             }
-            $this->Flash->error(__('The comment could not be saved. Please, try again.'));
+            else{
+                $this->Flash->error(__('不正なアクセスを確認'));
+                return $this->redirect(['controller'=>'articles','action' => 'view',$comment->article_id]);
+            }
+
+        }
+        else{
+            if ($this->request->is(['patch', 'post', 'put'])) {
+                $comment = $this->Comments->patchEntity($comment, $this->request->getData());
+                if ($this->Comments->save($comment)) {
+                    $this->Flash->success(__('The comment has been saved.'));
+
+                    return $this->redirect(['controller'=>'articles','action' => 'view',$comment->article_id]);
+                }
+                $this->Flash->error(__('The comment could not be saved. Please, try again.'));
+            }
         }
         $this->set(compact('comment'));
-        $this->set('_serialize', ['comment']);
     }
 
     /**
@@ -102,12 +123,17 @@ class CommentsController extends AppController
     {
         $this->request->allowMethod(['post', 'delete']);
         $comment = $this->Comments->get($id);
-        if ($this->Comments->delete($comment)) {
-            $this->Flash->success(__('The comment has been deleted.'));
-        } else {
-            $this->Flash->error(__('The comment could not be deleted. Please, try again.'));
+        if($this->request->data['password'] === $comment->password){
+            if ($this->Comments->delete($comment)) {
+                $this->Flash->success(__('The article with id: {0} has been deleted.', h($id)));
+            }
+            else {
+                $this->Flash->error(__('The comment could not be deleted. Please, try again.'));
+            }
         }
-
-        return $this->redirect(['action' => 'index']);
+        else{
+            $this->Flash->error(__('パスワードに誤りがあります'));
+        }
+        return $this->redirect(['controller'=>'articles','action' => 'view',$comment->article_id]);
     }
 }

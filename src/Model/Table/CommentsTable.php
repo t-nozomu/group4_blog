@@ -17,9 +17,9 @@ class CommentsTable extends Table
     public function validationDefault(Validator $validator)
     {
         $validator
-        ->notEmpty('handlename')
-        ->notEmpty('body')
-        ->notEmpty('password');
+            ->notEmpty('handlename')
+            ->notEmpty('body')
+            ->notEmpty('password');
 
         return $validator;
     }

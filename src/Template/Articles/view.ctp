@@ -47,7 +47,6 @@
         <div class="view_box5">
             <div class="view_comment view_box4">
 
-                <div class="view_id">ID:<?= h($comment->id) ?></div>
                 <div class="view_hn">HN:<?= h($comment->handlename) ?></div>
                 <div class="view_time"><?= $comment->created->format('Y年m月d日 H:i:s') ?></div>
 

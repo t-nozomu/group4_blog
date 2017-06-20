@@ -1,16 +1,21 @@
 /*view.ctp*/
 /*記事画面*/
+.view_title1{
+    text-align: left;
+}
+
 .view_box{
     border: 4px double #EB5D00;
-    background-color: #edd0d0;
+    background-color: #f9f2f2;
     margin: auto;
     padding: 1em;
     width: 700px;
     height: auto;
 }
 .view_box1{
-    padding: 5px;
+
     display: flex;
+    background-color: #edd0d0;#edd0d0 #f9f2f2
 }
 .view_title{
     width: 200px;
@@ -18,10 +23,17 @@
 .view_time{
     width: 100px;
 }
+.view_delete1{
+    display: flex;
+    margin-left: auto;
+}
+.view_edit{
+    margin-left: 5px;
+}
 /*コメント記入欄の設定*/
 .view_box2{
     border: 4px double #EB5D00;
-    background-color: #edd0d0;
+    background-color: #f9f2f2;
     margin: auto;
     padding: 1em;
     width: 700px;
@@ -53,11 +65,13 @@ button{
     margin-top: 5px;
 }
 input{
-    background-color: #f9f2f2;
+    background-color: #edd0d0;
     border: 0;
     width: 200px;
 }
-
+textarea{
+    background-color: #edd0d0;
+}
 /*Comment一覧設定*/
 .view_box3{
     border: 4px double #EB5D00;
@@ -76,23 +90,25 @@ input{
 }
 .view_box5{
     border: 1px double #EB5D00;
-    background-color: ;
+    background-color: #f9f2f2;
     margin: auto;
     padding: 5px;
     width: 700px;
     height: auto;
     margin-top: 10px;
+    padding: 1em;
 }
 .view_comment{
     display: flex;
     margin-bottom: 5px;
     margin-top: 8px;
+    background-color: #edd0d0;
 }
 .view_id{
-    width: 100px;
+    width: 80px;
 }
 .view_hn{
-    width: 100px;
+    width: 200px;
 }
 .view_time{
     width: 250px;
@@ -101,5 +117,5 @@ input{
     margin-left:auto;
 }
 .view_contents{
-
+    margin-top: 20px;
 }

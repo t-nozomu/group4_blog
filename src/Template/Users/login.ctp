@@ -9,7 +9,9 @@
         <div class="login_password"><?= $this->Form->control('password') ?></div>
 
 <?= $this->Form->button(__('Login')); ?>
-<?=$this->Form->button('Back',array('onclick' => 'history.back(); return false;')) ?>
+<?= $this->Form->end() ?>
+<?= $this->Form->create(null,['url'=>['controller'=>'articles','action' => 'index']]) ?>
+<?= $this->Form->button('Back',['class'=>'HelperButton']) ?>
 <?= $this->Form->end() ?>
     </center>
 </div>

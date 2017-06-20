@@ -118,4 +118,6 @@ textarea{
 }
 .view_contents{
     margin-top: 20px;
+    width: 700px;
+    word-wrap: break-word;
 }

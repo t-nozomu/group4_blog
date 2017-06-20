@@ -1,9 +1,8 @@
 /*view.ctp*/
 /*記事画面*/
 .view_title1{
-    text-align: left;
+    text-align: right;
 }
-
 .view_box{
     border: 4px double #EB5D00;
     background-color: #f9f2f2;
@@ -53,6 +52,12 @@
     vertical-align: middle;
     text-align:left;
     margin:10px 0;
+}
+.attention{
+    color: red;
+}
+.add_button{
+    text-align: right;
 }
 
 label[for=name]{

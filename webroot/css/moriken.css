@@ -3,7 +3,7 @@
 .login_logout_button{
     display: flex;
 }
-.login_button, .logout_button{
+.login_button, .logout_button, .view_title1{
     margin-left: auto;
 }
 .div_haikei{
@@ -138,7 +138,9 @@ textarea{
 .attention{
     color: red;
 }
-
+.view_title1 .link_color{
+    text-align: right;
+}
 /*edit.ctp*/
 /*edit画面設定*/
 .edit_t{

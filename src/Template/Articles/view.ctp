@@ -10,7 +10,7 @@
         <div class="view_time"><?= $article->created->format('Y年m月d日 H:i:s') ?></div>
         <div class="view_delete1"><?= $this->Form->postLink(
             'Delete',
-            ['action' => 'delete', $article->id],['class' => 'link_color'],
+            ['action' => 'delete', $article->id],
             ['confirm' => 'Are you sure?'])?>
 
         <div class="view_edit"><?= $this->Html->link('Edit', ['action' => 'edit', $article->id],['class' => 'link_color']) ?></div>

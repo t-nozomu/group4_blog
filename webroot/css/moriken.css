@@ -87,13 +87,7 @@ div{
     border-bottom: 2px solid #EB5D00;
     width: 920px;
 }
-.title_color{
-    color: red;
-}
-.delete_color{
-    color: #5D86FF;
-}
-.edit_color{
+.link_color{
     color: #5D86FF;
 }
 .del_color{

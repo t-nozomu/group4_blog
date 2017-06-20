@@ -13,12 +13,3 @@
     echo $this->Form->end();
 
 ?>
-
-<?=
- $this->Form->postLink(
-    '更新',
-    ['action' => 'view', $article->id],
-    ['confirm' => 'この内容で記事を更新しても宜しいですか？
-    ※yesをクリックすると編集内容が反映されます'])
-
-?>

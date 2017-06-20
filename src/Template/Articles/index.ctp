@@ -16,7 +16,7 @@
         <div class="div_id">Id</div>
         <div class="div_title">Title</div>
             <div class="div_comments">Comments</div>
-                <div class="div_created">Created</div>
+                <div class="div_created">Time</div>
         <div class="div_actions"><?php if( !is_null($auth) ): ?>Actions<?php endif; ?></div>
     </div>
 

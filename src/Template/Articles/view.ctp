@@ -1,8 +1,8 @@
-
+<!-- 記事部分 -->
 <?= $this->Html->css('view_style.css') ?>
     <div class="view_title1"><?= $this->Form->postLink(
         '記事一覧へ',
-        ['action' => 'index'])?>
+        ['action' => 'index'],['class' => 'link_color'])?>
     </div>
 <div class="view_box">
     <div class="view_box1">
@@ -10,10 +10,10 @@
         <div class="view_time"><?= $article->created->format('Y年m月d日 H:i:s') ?></div>
         <div class="view_delete1"><?= $this->Form->postLink(
             'Delete',
-            ['action' => 'delete', $article->id],
+            ['action' => 'delete', $article->id],['class' => 'link_color'],
             ['confirm' => 'Are you sure?'])?>
 
-        <div class="view_edit"><?= $this->Html->link('Edit', ['action' => 'edit', $article->id]) ?></div>
+        <div class="view_edit"><?= $this->Html->link('Edit', ['action' => 'edit', $article->id],['class' => 'link_color']) ?></div>
         </div>
     </div>
 
@@ -21,7 +21,7 @@
 
 
 </div>
-<!--heyheyhey-->
+<!-- コメント入力フォーム -->
 <br>
 <div class="view_box2">
 
@@ -33,12 +33,12 @@
         <div><?= "※このパスワードはコメント修正、削除時に必要になります。<br />" ?> </div>
     </div>
 
-    <?= $this->Form->button(__('Add')) ?>
+    <div class="add_button"><?= $this->Form->button(__('Add')) ?></div>
     <?= $this->Form->hidden('article_id',array('value'=>$article->id)) ?>
     <?= $this->Form->end() ?>
 
 </div>
-
+<!-- コメント一覧 -->
 <br>
 <div class="">
 
@@ -49,11 +49,11 @@
 
                 <div class="view_id">ID:<?= h($comment->id) ?></div>
                 <div class="view_hn">HN:<?= h($comment->handlename) ?></div>
-                <div class="view_time">TIME:<?= $comment->created->format('Y年m月d日 H:i:s') ?></div>
+                <div class="view_time"><?= $comment->created->format('Y年m月d日 H:i:s') ?></div>
 
                 <div class="view_delete">
-                    <a href="javascript:Dellog()">Delete</a>
-                    <a href="javascript:Editlog()">Edit</a>
+                    <a href="javascript:Dellog()" class="link_color">Delete</a>
+                    <a href="javascript:Editlog()" class="link_color">Edit</a>
                 </div>
             </div>
             <div class = "view_contents"><div><?= nl2br(h($comment->body)) ?></div></div>

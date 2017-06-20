@@ -1,0 +1,102 @@
+/*view.ctp*/
+/*記事画面*/
+.view_box{
+    border: 4px double #EB5D00;
+    background-color: #edd0d0;
+    margin: auto;
+    padding: 1em;
+    width: 700px;
+    height: auto;
+}
+.view_box1{
+    padding: 5px;
+    display: flex;
+}
+.view_title{
+    width: 200px;
+}
+.view_time{
+    width: 100px;
+}
+/*コメント記入欄の設定*/
+.view_box2{
+    border: 4px double #EB5D00;
+    background-color: #edd0d0;
+    margin: auto;
+    padding: 1em;
+    width: 700px;
+    height: auto;
+}
+
+.view_box2 label{
+    width:200px;
+    margin-right:50px;
+}
+
+.view_body1{
+    vertical-align: middle;
+    text-align:left;
+    margin:10px 0;
+}
+
+input#name{
+    margin-left: 39px;
+    width: 200px;
+    margin-top: 5px;
+    height: 10px;
+    border: 0;
+    padding: 5px;
+    font-size: 1.3em;
+    background-color: #f9f2f2;
+}
+textarea#body{
+    vertical-align: middle;
+    letter-spacing: normal;
+}
+
+
+/*Comment一覧設定*/
+.view_box3{
+    border: 4px double #EB5D00;
+    background-color: ;
+    margin: auto;
+    padding: 1em;
+    width: 700px;
+    height: auto;
+}
+.view_box4{
+    border: 1px #EB5D00;
+    background-color: ;
+    /*margin: auto;*/
+    width: 700px;
+    height: auto;
+}
+.view_box5{
+    border: 1px double #EB5D00;
+    background-color: ;
+    margin: auto;
+    padding: 5px;
+    width: 700px;
+    height: auto;
+    margin-top: 10px;
+}
+.view_comment{
+    display: flex;
+    margin-bottom: 5px;
+    margin-top: 8px;
+}
+.view_id{
+    width: 100px;
+}
+.view_hn{
+    width: 100px;
+}
+.view_time{
+    width: 250px;
+}
+.view_delete{
+    margin-left:auto;
+}
+.view_contents{
+
+}

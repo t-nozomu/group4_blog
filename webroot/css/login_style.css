@@ -1,0 +1,32 @@
+/*login.ctp*/
+/*login画面設定*/
+.login_box{
+    border: 4px double #EB5D00;
+    background-color: #edd0d0;
+    margin: auto;
+    padding: 1em;
+    width: 400px;
+    height: auto;
+}
+.login_username{
+    margin-left: 15px;
+    width:auto;
+    height: 10px;
+    margin-top: 15px;
+    border: 0;
+    padding: 5px;
+    margin-right: 70px;
+}
+.login_password{
+    margin-left: 15px;
+    width:auto;
+    height: 10px;
+    margin-top: 15px;
+    margin-bottom: 17px;
+    border: 0;
+    padding: 5px;
+    margin-right: 65px;
+}
+label{
+    margin-right: 10px;
+}

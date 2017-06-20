@@ -7,7 +7,9 @@
 div{
     font-family: "Tahoma",sans-serif;
 }
-
+.title_name{
+    text-align: center;
+}
 /*トップバー*/
 .top-bar.expanded .title-area {
     background: #FFFFFF;

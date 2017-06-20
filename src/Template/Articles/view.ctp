@@ -33,7 +33,7 @@
         <div><?= "※このパスワードはコメント修正、削除時に必要になります。<br />" ?> </div>
     </div>
 
-    <?= $this->Form->button(__('投稿')) ?>
+    <?= $this->Form->button(__('Add')) ?>
     <?= $this->Form->hidden('article_id',array('value'=>$article->id)) ?>
     <?= $this->Form->end() ?>
 

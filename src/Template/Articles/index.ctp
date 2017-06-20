@@ -5,7 +5,7 @@
         <p><?= $this->Html->link('Logout', ['controller' => 'Users', 'action' => 'logout'],['class'=>'link_color']) ?></p>
 <?php endif; ?>
 <?php if( !is_null($auth) ): ?>
-    <p><?= $this->Html->link('投稿', ['action' => 'add']) ?></p>
+    <p><?= $this->Html->link('投稿', ['action' => 'add'],['class'=>'link_color']) ?></p>
 <?php endif; ?>
 
 

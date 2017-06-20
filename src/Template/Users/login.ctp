@@ -8,12 +8,14 @@
         <div class="login_username"><?= $this->Form->control('username') ?></div>
         <div class="login_password"><?= $this->Form->control('password') ?></div>
 
-    </center>
-</div>
+
+
 <div class="buttons">
     <?= $this->Form->button(__('Login')); ?>
     <?= $this->Form->end() ?>
     <?= $this->Form->create(null,['url'=>['controller'=>'articles','action' => 'index']]) ?>
     <?= $this->Form->button('Back',['class'=>'HelperButton']) ?>
     <?= $this->Form->end() ?>
+</div>
+    </center>
 </div>

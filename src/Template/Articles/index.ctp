@@ -38,7 +38,7 @@
             <?php if( !is_null($auth) ): ?>
                 <?= $this->Form->postLink(
                     'Delete',
-                    ['action' => 'delete', $article->id],['class'=>'link_color'],
+                    ['action' => 'delete', $article->id],
                     ['confirm' => "No."."$article->id"."の「"."$article->title"."」を削除しますか？"])
                 ?>
                     <?= $this->Html->link('Edit', ['action' => 'edit', $article->id],['class'=>'link_color']) ?>

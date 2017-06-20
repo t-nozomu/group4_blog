@@ -26,8 +26,8 @@
 <div class="view_box2">
 
     <?= $this->Form->create(null,['url'=>['controller'=>'comments','action'=>'add']]) ?>
-    <?= $this->Form->input('handlename',['label'=>'Name']) ?>
-    <div class="view_body1"><?= $this->Form->input('body', ['rows' => '7', 'cols' => '96','label'=>'Content']) ?></div>
+    <?= $this->Form->input('handlename',['label'=>'Name','maxlength'=>20]) ?>
+    <div class="view_body1"><?= $this->Form->input('body', ['rows' => '7', 'cols' => '96','label'=>'Content','maxlength'=>400]) ?></div>
     <div>
         <div><?=  $this->Form->input('password',array('placeholder' => "任意のPassを入力してください")) ?> </div>
         <div><?= "※このパスワードはコメント修正、削除時に必要になります。<br />" ?> </div>
@@ -47,8 +47,8 @@
         <div class="view_box5">
             <div class="view_comment view_box4">
 
-                <div class="view_id">ID:<?= $comment->id ?></div>
-                <div class="view_hn">HN:<?= $comment->handlename ?></div>
+                <div class="view_id">ID:<?= h($comment->id) ?></div>
+                <div class="view_hn">HN:<?= h($comment->handlename) ?></div>
                 <div class="view_time">TIME:<?= $comment->created->format('Y年m月d日 H:i:s') ?></div>
 
                 <div class="view_delete">
@@ -56,7 +56,7 @@
                     <a href="javascript:Editlog()">Edit</a>
                 </div>
             </div>
-            <div class = "view_contents"><div><?= $comment->body ?></div></div>
+            <div class = "view_contents"><div><?= nl2br(h($comment->body)) ?></div></div>
         </div>
         <?php endforeach; ?>
     </div>

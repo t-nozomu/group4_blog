@@ -5,6 +5,8 @@ namespace App\Model\Table;
 
 use Cake\ORM\Table;
 use Cake\Validation\Validator;
+use Cake\Event\Event;
+use ArrayObject;
 
 class ArticlesTable extends Table
 {
@@ -32,6 +34,15 @@ class ArticlesTable extends Table
     public function isOwnedBy($articleId, $userId)
     {
         return $this->exists(['id' => $articleId, 'user_id' => $userId]);
+    }
+
+    public function beforeMarshal(Event $event, ArrayObject $data, ArrayObject $options)
+    {
+        foreach ($data as $key => $value) {
+            if (is_string($value)) {
+                $data[$key] = preg_replace('/^[ 　]+/u', '', $value);
+            }
+        }
     }
 }
 ?>

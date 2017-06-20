@@ -21,6 +21,9 @@
 .add_title{
     width:50px;
 }
+label[for=body]{
+    margin-bottom: 10px;
+}
 /*Contents設定*/
 /*textarea#contents{
     width: 450px;

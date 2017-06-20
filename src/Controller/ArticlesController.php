@@ -27,6 +27,9 @@
         {
             //$article = $this->Articles->get($id);
             $article = $this->Articles->find('all')->contain(['Comments'])->where(['id'=>$id])->first();
+            if(!isset($article->id)){
+                return $this->redirect(['action' => 'index']);
+            }
             $this->set('article',$article);
         }
 
@@ -45,8 +48,7 @@
         $this->set(compact('article'));
         }
 
-        public function edit($id = null) {
-
+        public function edit($id = null){
             $article = $this->Articles->get($id);
             if ($this->request->is(['post', 'put'])) {
                 $this->Articles->patchEntity($article, $this->request->getData());

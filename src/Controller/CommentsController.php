@@ -84,7 +84,7 @@ class CommentsController extends AppController
         $comment = $this->Comments->get($id);
         if(!isset($this->request->data['handlename'])){
             if(isset($this->request->data['password'])){
-                if($this->request->data['password'] === $comment->password){
+                if($this->request->data['password'] == $comment->password){
                     $this->Flash->success(__('Password authentication completed.'));
                 }
                 else{
@@ -123,7 +123,7 @@ class CommentsController extends AppController
     {
         $this->request->allowMethod(['post', 'delete']);
         $comment = $this->Comments->get($id);
-        if($this->request->data['password'] === $comment->password){
+        if($this->request->data['password'] == $comment->password){
             if ($this->Comments->delete($comment)) {
                 $this->Flash->success(__('The article with id: {0} has been deleted.', h($id)));
             }
@@ -132,7 +132,7 @@ class CommentsController extends AppController
             }
         }
         else{
-            $this->Flash->error(__('パスワードに誤りがあります'));
+            $this->Flash->error(__('The password is incorrect.'));
         }
         return $this->redirect(['controller'=>'articles','action' => 'view',$comment->article_id]);
     }

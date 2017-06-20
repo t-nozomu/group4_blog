@@ -51,8 +51,8 @@
                 <div class="view_time"><?= $comment->created->format('Y年m月d日 H:i:s') ?></div>
 
                 <div class="view_delete">
-                    <a href="javascript:Dellog()" class="link_color">Delete</a>
-                    <a href="javascript:Editlog()" class="link_color">Edit</a>
+                    <a href="javascript:Dellog(<?= $comment->id?>)" class="link_color">Delete</a>
+                    <a href="javascript:Editlog(<?= $comment->id?>)" class="link_color">Edit</a>
                 </div>
             </div>
             <div class = "view_contents"><div><?= nl2br(h($comment->body)) ?></div></div>
@@ -62,12 +62,12 @@
 </div>
 
 <script type="text/javascript">
-    function Dellog(){
+    function Dellog(id){
             var pswd = window.prompt("Plase enter your password","");
             if(pswd != null){
             var form = document.createElement('form');
             document.body.appendChild( form );
-            form.setAttribute('action' , '/group4_blog/comments/delete/<?= $comment->id ?>');
+            form.setAttribute('action' , '/group4_blog/comments/delete/'+id);
             form.setAttribute('method','post');
             var input = document.createElement('input');
             input.setAttribute('type','hidden');
@@ -84,7 +84,7 @@
 
     }
 
-    function Editlog(){
+    function Editlog(id){
             //window.alert("aaaaaaaa");
             if(pswd = window.prompt("Plase enter your password.","")){
             var form = document.createElement('form');
@@ -94,7 +94,7 @@
             input.setAttribute('name','password');
             input.setAttribute('value',pswd);
             form.appendChild(input);
-            form.setAttribute('action' , '/group4_blog/comments/edit/<?= $comment->id ?>');
+            form.setAttribute('action' , '/group4_blog/comments/edit/'+id);
             form.setAttribute('method','post');
             form.submit();
         }

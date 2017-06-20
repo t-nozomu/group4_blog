@@ -41,6 +41,8 @@ label[for=password]{
 }
 textarea{
     margin-right: 50px;
+    text-wrap: normal;
+    font-size: auto;
 }
 label{
     display:block;

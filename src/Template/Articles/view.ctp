@@ -6,8 +6,8 @@
     </div>
 <div class="view_box">
     <div class="view_box1">
-    <div class="view_title">TITLE:<?= h($article->title) ?></div>
-        <div class="view_time">TIME:<?= $article->created->format('Y年m月d日 H:i:s') ?></div>
+    <div class="view_title">TITLE : <?= h($article->title) ?></div>
+        <div class="view_time">TIME : <?= $article->created->format('Y年m月d日 H:i:s') ?></div>
         <div class="view_delete"><?= $this->Form->postLink(
             'Delete',
             ['action' => 'delete', $article->id],

@@ -27,7 +27,7 @@
     <div class="div_main div_box1">
         <div class="div_id"><?= $article->id ?></div>
         <div class="div_title">
-            <?= $this->Html->link($article->title, ['action' => 'view', $article->id]) ?>
+            <span class="title_color"><?= $this->Html->link($article->title, ['action' => 'view', $article->id],['class'=>'delete_color']) ?></span>
         </div>
                 <div class="div_comments"><?= count($article->comments) ?></div>
         <div class="div_created">
@@ -37,10 +37,10 @@
             <?php if( !is_null($auth) ): ?>
                 <?= $this->Form->postLink(
                     'Delete',
-                    ['action' => 'delete', $article->id],
+                    ['action' => 'delete', $article->id],['class'=>'delete_color'],
                     ['confirm' => "No."."$article->id"."の「"."$article->title"."」を削除しますか？"])
                 ?>
-                    <span class="edit_color"><?= $this->Html->link('Edit', ['action' => 'edit', $article->id],['class'=>'edit_color']) ?></span>
+                    <?= $this->Html->link('Edit', ['action' => 'edit', $article->id],['class'=>'edit_color']) ?>
             <?php endif; ?>
         </div>
     </div>

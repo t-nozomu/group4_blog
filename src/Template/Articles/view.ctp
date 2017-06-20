@@ -23,8 +23,8 @@
 <div class="view_box2">
 
     <?= $this->Form->create(null,['url'=>['controller'=>'comments','action'=>'add']]) ?>
-    <?= $this->Form->input('Name') ?>
-    <div class="view_body1"><?= $this->Form->input('body', ['rows' => '7', 'cols' => '80']) ?></div>
+    <?= $this->Form->input('handlename',['label'=>'Name']) ?>
+    <div class="view_body1"><?= $this->Form->input('body', ['rows' => '7', 'cols' => '80','label'=>'Content']) ?></div>
     <div>
         <div><?=  $this->Form->input('password',array('placeholder' => "任意のPassを入力してください")) ?> </div>
         <div><?= "※このパスワードはコメント修正、削除時に必要になります。<br />" ?> </div>

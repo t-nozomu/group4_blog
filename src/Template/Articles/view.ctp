@@ -1,19 +1,20 @@
 
 <?= $this->Html->css('view_style.css') ?>
-    <div><?= $this->Form->postLink(
+    <div class="view_title1"><?= $this->Form->postLink(
         '記事一覧へ',
         ['action' => 'index'])?>
     </div>
 <div class="view_box">
     <div class="view_box1">
-    <div class="view_title">TITLE:<?= h($article->title) ?></div>
-        <div class="view_time">TIME:<?= $article->created->format('Y年m月d日 H:i:s') ?></div>
-        <div class="view_delete"><?= $this->Form->postLink(
+    <div class="view_title">TITLE : <?= h($article->title) ?></div>
+        <div class="view_time">TIME : <?= $article->created->format('Y年m月d日 H:i:s') ?></div>
+        <div class="view_delete1"><?= $this->Form->postLink(
             'Delete',
             ['action' => 'delete', $article->id],
             ['confirm' => 'Are you sure?'])?>
+
+        <div class="view_edit"><?= $this->Html->link('Edit', ['action' => 'edit', $article->id]) ?></div>
         </div>
-        <div><?= $this->Html->link('Edit', ['action' => 'edit', $article->id]) ?></div>
     </div>
 
         <div> <?php echo nl2br(h($article->body)) ?></div>
@@ -26,7 +27,7 @@
 
     <?= $this->Form->create(null,['url'=>['controller'=>'comments','action'=>'add']]) ?>
     <?= $this->Form->input('handlename',['label'=>'Name']) ?>
-    <div class="view_body1"><?= $this->Form->input('body', ['rows' => '7', 'cols' => '80','label'=>'Content']) ?></div>
+    <div class="view_body1"><?= $this->Form->input('body', ['rows' => '7', 'cols' => '96','label'=>'Content']) ?></div>
     <div>
         <div><?=  $this->Form->input('password',array('placeholder' => "任意のPassを入力してください")) ?> </div>
         <div><?= "※このパスワードはコメント修正、削除時に必要になります。<br />" ?> </div>

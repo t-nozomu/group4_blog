@@ -40,6 +40,12 @@ div{
 }
 
 /*枠で囲む*/
+.div_box10{
+    margin: 0 auto;
+    width: 930px;
+    padding: 1em 1em 1em 0;
+}
+
 .div_box{
     border: 4px double #EB5D00;
     background-color: #f9f3eb;
@@ -157,6 +163,7 @@ textarea{
 .edit_box1{
     display: flex;
     margin: 3px;
+    margin-top: 10px;
 }
 .edit_title{
     width: 50px;

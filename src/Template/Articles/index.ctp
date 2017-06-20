@@ -5,14 +5,16 @@
             <div class="logout_button"><?= $this->Html->link('Logout', ['controller' => 'Users', 'action' => 'logout'],['class'=>'link_color']) ?></div>
         <?php endif; ?>
 </div>
+
+
+<div class="div_box10">
+<!-- File: src/Template/Articles/index.ctp (delete links added) -->
 <?php if( !is_null($auth) ): ?>
     <div><?= $this->Html->link('Add artcles', ['action' => 'add'],['class'=>'link_color']) ?></div>
 <?php endif; ?>
-
-
-<!-- File: src/Template/Articles/index.ctp (delete links added) -->
-
+</div>
 <div class="div_box">
+
     <div class="div_main div_color">
         <div class="div_id">Id</div>
         <div class="div_title">Title</div>

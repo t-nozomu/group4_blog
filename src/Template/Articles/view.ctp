@@ -7,7 +7,7 @@
 <div class="view_box">
     <div class="view_box1">
     <div class="view_title">TITLE : <?= h($article->title) ?></div>
-        <div class="view_time">TIME : <?= $article->created->format('Y年m月d日 H:i:s') ?></div>
+        <div class="view_time"><?= $article->created->format('Y年m月d日 H:i:s') ?></div>
         <div class="view_delete1"><?= $this->Form->postLink(
             'Delete',
             ['action' => 'delete', $article->id],
@@ -17,7 +17,7 @@
         </div>
     </div>
 
-        <div> <?php echo nl2br(h($article->body)) ?></div>
+        <div class="view_body7"> <?php echo nl2br(h($article->body)) ?></div>
 
 
 </div>

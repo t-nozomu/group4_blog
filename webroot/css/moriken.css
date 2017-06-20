@@ -61,21 +61,28 @@ div{
 }
 .div_id{
     margin: left;
-    width:70px;
+    width:55px;
     display: block;
     padding: auto;
 }
 .div_title{
     margin:left;
-    width: 240px;
+    width: 209px;
     display: block;
     padding: auto;
+    overflow: hidden;
+}
+.titles{
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 .div_comments{
     margin:left;
     width: 100px;
     display: block;
     padding: auto;
+    margin-left: 15px;
 }
 .div_created{
     margin: left;

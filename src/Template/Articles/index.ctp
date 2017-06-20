@@ -28,7 +28,7 @@
     <div class="div_main div_box1">
         <div class="div_id"><?= $article->id ?></div>
         <div class="div_title">
-            <span class="title_color"><?= $this->Html->link($article->title, ['action' => 'view', $article->id],['class'=>'link_color']) ?></span>
+            <span class="titles"><?= $this->Html->link($article->title, ['action' => 'view', $article->id],['class'=>'link_color']) ?></span>
         </div>
                 <div class="div_comments"><?= count($article->comments) ?></div>
         <div class="div_created">

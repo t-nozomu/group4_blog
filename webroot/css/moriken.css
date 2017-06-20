@@ -3,6 +3,12 @@
 .login_logout_button{
     display: flex;
 }
+.login_button, .logout_button{
+    background-color: #EAEAEA;
+    padding: 5px;
+    border-radius: 6px;
+    font-size: 24px;
+}
 .login_button, .logout_button, .view_title1{
     margin-left: auto;
 }
@@ -137,16 +143,8 @@ textarea{
     border: 0;
 
 }
-/*view.ctp*/
-.add_button{
-    text-align: right;
-}
-.attention{
-    color: red;
-}
-.view_title1 .link_color{
-    text-align: right;
-}
+
+
 /*edit.ctp*/
 /*edit画面設定*/
 .edit_t{

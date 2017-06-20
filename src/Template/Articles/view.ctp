@@ -11,7 +11,7 @@
         <div class="view_delete1"><?= $this->Form->postLink(
             'Delete',
             ['action' => 'delete', $article->id],
-            ['confirm' => "No."."$article->id"."の「"."$article->title"."」を削除しますか？"])?>
+            ['confirm' => 'Are you sure?'])?>
 
         <div class="view_edit"><?= $this->Html->link('Edit', ['action' => 'edit', $article->id],['class' => 'link_color']) ?></div>
         </div>

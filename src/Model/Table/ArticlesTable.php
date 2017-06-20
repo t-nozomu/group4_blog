@@ -25,8 +25,7 @@ class ArticlesTable extends Table
             ->notEmpty('title')
             ->add('title',[
                 'maxlen' => [
-                    'rule'=>['maxlength',20],
-                    'message' => '20文字以下にしてください'
+                    'rule'=>['maxlength',20]
                 ]
             ])
             ->notEmpty('body');

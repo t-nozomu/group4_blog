@@ -21,7 +21,9 @@ class CommentsTable extends Table
         $validator
             ->notEmpty('handlename')
             ->add('handlename',[
-                'maxlen' => ['rule'=>['maxlength',20]]
+                'maxlen' => [
+                    'rule'=>['maxlength',20]
+                ]
             ])
             ->notEmpty('body')
             ->add('body',[

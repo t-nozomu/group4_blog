@@ -7,6 +7,30 @@
 div{
     font-family: "Tahoma",sans-serif;
 }
+
+/*トップバー*/
+.top-bar.expanded .title-area {
+    background: #FFFFFF;
+}
+.top-bar.expanded, .top-bar,.top-bar-section ul li,.top-bar-section li:not(.has-form) a:not(.button) {
+    background: #116d76;
+    /*background: #FFA500;*/
+}
+.top-bar-section li:not(.has-form) a:not(.button):hover {
+    background-color: #308e97;
+    background: #308e97;
+}
+.side-nav li.heading {
+    color: #1798A5;
+    font-size: 0.875rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 0.4375rem 0.875rem;
+}
+#actions-sidebar {
+    background: #fafafa;
+}
+
 /*枠で囲む*/
 .div_box{
     border: 4px double #EB5D00;
@@ -62,8 +86,14 @@ div{
     border-bottom: 2px solid #EB5D00;
     width: 920px;
 }
+.title_color{
+    color: red;
+}
+.delete_color{
+    color: #5D86FF;
+}
 .edit_color{
-    color: black;
+    color: #5D86FF;
 }
 .del_color{
     color: red;
@@ -71,7 +101,7 @@ div{
 /*URLが付いている文字列*/
 a{
     text-decoration: none;
-    color: #5D86FF;
+    color: #FFF;
 }
 
 /*title設定*/

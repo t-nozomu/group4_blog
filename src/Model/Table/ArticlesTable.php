@@ -21,6 +21,9 @@ class ArticlesTable extends Table
     {
         $validator
             ->notEmpty('title')
+            ->add('title',[
+                'maxlen' => ['rule'=>['maxlength',20]]
+            ])
             ->notEmpty('body');
 
         return $validator;

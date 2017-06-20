@@ -10,6 +10,7 @@
             <?= $this->Form->button(__('Save Article')) ?>
             <?= $this->Form->end() ?>
 
+<<<<<<< HEAD
             <?= $this->Form->create() ?>
             <?= $this->Form->button('戻る',array('onclick' => 'history.back(); return false;')) ?>
             <?= $this->Form->end() ?>
@@ -22,3 +23,6 @@
         </div>
     </div>
 </div>
+=======
+?>
+>>>>>>> kishino

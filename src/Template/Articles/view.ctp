@@ -10,8 +10,8 @@
         <div class="view_time"><?= $article->created->format('Y年m月d日 H:i:s') ?></div>
         <div class="view_delete1"><?= $this->Form->postLink(
             'Delete',
-            ['action' => 'delete', $article->id],['class' => 'link_color'],
-            ['confirm' => 'Are you sure?'])?>
+            ['action' => 'delete', $article->id],
+            ['confirm' => "No."."$article->id"."の「"."$article->title"."」を削除しますか？"])?>
 
         <div class="view_edit"><?= $this->Html->link('Edit', ['action' => 'edit', $article->id],['class' => 'link_color']) ?></div>
         </div>
@@ -30,10 +30,10 @@
     <div class="view_body1"><?= $this->Form->input('body', ['rows' => '7', 'cols' => '96','label'=>'Content','maxlength'=>400]) ?></div>
     <div>
         <div><?=  $this->Form->input('password',array('placeholder' => "任意のPassを入力してください")) ?> </div>
-        <div class="attention"><?= "※このパスワードはコメント修正、削除時に必要になります。<br />" ?> </div>
+        <div><?= "※このパスワードはコメント修正、削除時に必要になります。<br />" ?> </div>
     </div>
 
-    <div class="add_button"><?= $this->Form->button(__('Add'),['class' => 'add_button']) ?></div>
+    <div class="add_button"><?= $this->Form->button(__('Add')) ?></div>
     <?= $this->Form->hidden('article_id',array('value'=>$article->id)) ?>
     <?= $this->Form->end() ?>
 

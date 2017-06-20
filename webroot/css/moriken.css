@@ -131,6 +131,14 @@ textarea{
     border: 0;
 
 }
+/*view.ctp*/
+.add_button{
+    text-align: right;
+}
+.attention{
+    color: red;
+}
+
 /*edit.ctp*/
 /*edit画面設定*/
 .edit_t{

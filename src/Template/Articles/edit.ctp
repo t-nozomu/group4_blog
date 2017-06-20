@@ -11,14 +11,9 @@
             <?= $this->Form->end() ?>
 
             <?= $this->Form->create() ?>
-            <?= $this->Form->button('戻る',array('onclick' => 'history.back(); return false;')) ?>
+            <?= $this->Form->button('Back',array('onclick' => 'history.back(); return false;')) ?>
             <?= $this->Form->end() ?>
 
-            <?=$this->Form->postButton('更新',
-                ['action' => 'view', $article->id],
-                ['confirm' => 'この内容で記事を更新しても宜しいですか？
-                ※yesをクリックすると編集内容が反映されます'])
-                ?>
         </div>
     </div>
 </div>

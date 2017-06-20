@@ -10,26 +10,28 @@
     ユーザは、 www.example.com/articles/index というリクエストで、そのロジックにアクセスできる*/
     //アクションの追加: アクションは、 アプリケーションの中のひとつの関数か、インターフェイスを表す
     class ArticlesController extends AppController {
-        public function initialize() {
+        public function initialize()
+        {
             parent::initialize();
 
             $this->loadComponent('Flash'); // Include the FlashComponent
             $this->set('auth', $this->Auth->user() );
         }
 
-    public function index()
-    {
-        $this->set('articles', $this->Articles->find('all')->contain(['Comments']));
-    }
+        public function index()
+        {
+            $this->set('articles', $this->Articles->find('all')->contain(['Comments']));
+        }
 
-    public function view($id)
-    {
-        //$article = $this->Articles->get($id);
-        $article = $this->Articles->find('all')->contain(['Comments'])->where(['id'=>$id])->first();
-        $this->set('article',$article);
-    }
+        public function view($id)
+        {
+            //$article = $this->Articles->get($id);
+            $article = $this->Articles->find('all')->contain(['Comments'])->where(['id'=>$id])->first();
+            $this->set('article',$article);
+        }
 
-        public function add() {
+        public function add()
+        {
             $article = $this->Articles->newEntity();
             if ($this->request->is('post')) {
                 $article = $this->Articles->patchEntity($article, $this->request->getData());
@@ -41,7 +43,7 @@
                 $this->Flash->error(__('Unable to add your article.'));
             }
         $this->set(compact('article'));
-    }
+        }
 
         public function edit($id = null) {
 
@@ -67,7 +69,7 @@
                 $this->Flash->success(__('The article with id: {0} has been deleted.', h($id)));
                 return $this->redirect(['action' => 'index']);
             }
-    }
+        }
 
 
         public function isAuthorized($user)
@@ -88,7 +90,4 @@
             return parent::isAuthorized($user);
         }
     }
-
-
-
- ?>
+?>

@@ -3,6 +3,12 @@
 .login_logout_button{
     display: flex;
 }
+.login_button, .logout_button{
+    background-color: #EAEAEA;
+    padding: 5px;
+    border-radius: 6px;
+    font-size: 24px;
+}
 .login_button, .logout_button, .view_title1{
     margin-left: auto;
 }

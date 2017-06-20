@@ -1,0 +1,47 @@
+.cedit_title{
+    text-align: center;
+}
+
+.cedit_box{
+    border: 4px double #EB5D00;
+    background-color: #edd0d0;
+    margin: auto;
+    padding: 1em;
+    width: 580px;
+    height: auto;
+}
+
+.cedit_name{
+    width:auto;
+    margin: auto;
+}
+.cedit_body{
+    margin-top: 10px;
+    margin: auto;
+}
+.cedit_pass{
+    margin-top: 10px;
+    margin: auto;
+}
+.cedit_button{
+    display: flex;
+    margin-top: 10px;
+}
+label[for=handlename]{
+    margin-right: 50px;
+    margin-top: 5px;
+}
+label[for="body"]{
+    margin-right: 50px;
+    margin-top: 10px;
+}
+label[for=password]{
+    margin-right: 50px;
+    margin-top: 8px;
+}
+textarea{
+    margin-right: 50px;
+}
+label{
+    display:block;
+}

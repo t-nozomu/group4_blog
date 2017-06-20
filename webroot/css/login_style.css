@@ -6,31 +6,27 @@
     margin: auto;
     padding: 1em;
     width: 400px;
-    height: 120px;
+    height: auto;
 }
 .login_username{
     margin-left: 15px;
-    width:200px;
+    width:auto;
     height: 10px;
     margin-top: 15px;
     border: 0;
     padding: 5px;
+    margin-right: 70px;
 }
 .login_password{
     margin-left: 15px;
-    width:200px;
+    width:auto;
     height: 10px;
     margin-top: 15px;
     margin-bottom: 17px;
     border: 0;
     padding: 5px;
-}
-.login_username{
-    margin-right: 70px;
-}
-.login_password{
     margin-right: 65px;
 }
-button{
-    margin-top:50px;
+label{
+    margin-right: 10px;
 }

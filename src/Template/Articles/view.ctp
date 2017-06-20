@@ -1,22 +1,24 @@
 
 <?= $this->Html->css('view_style.css') ?>
+    <div><?= $this->Form->postLink(
+        '記事一覧へ',
+        ['action' => 'index'])?>
+    </div>
 <div class="view_box">
-    <div><?= h($article->title) ?></div>
     <div class="view_box1">
-        <div><?= $this->Form->postLink(
+    <div class="view_title">TITLE:<?= h($article->title) ?></div>
+        <div class="view_time">TIME:<?= $article->created->format('Y年m月d日 H:i:s') ?></div>
+        <div class="view_delete"><?= $this->Form->postLink(
             'Delete',
             ['action' => 'delete', $article->id],
             ['confirm' => 'Are you sure?'])?>
         </div>
         <div><?= $this->Html->link('Edit', ['action' => 'edit', $article->id]) ?></div>
     </div>
-        <div> <?= $article->created->format('Y年m月d日 H:i:s') ?></div>
+
         <div> <?php echo nl2br(h($article->body)) ?></div>
 
-        <div><?= $this->Form->postLink(
-            '記事一覧へ',
-            ['action' => 'index'])?>
-        </div>
+
 </div>
 <!--heyheyhey-->
 <br>
@@ -37,28 +39,25 @@
 </div>
 
 <br>
-<div class="view_box3">
-<div>Comment</div>
+<div class="">
+
     <div>
-        <div class="view_comment">
-            <div>Id</div>
-            <div>Name</div>
-            <div>Time</div>
-            <div>Contents</div>
-            <div>action</div>
-        </div>
-                <?php foreach ($article->comments as $comment): ?>
-        <div>
-                <div><?= $comment->id ?></div>
-                <div><?= $comment->handlename ?></div>
-                <div><?= $comment->created->format('Y年m月d日 H:i:s') ?></div>
-                <div><?= $comment->body ?></div>
-            <div>
-                <a href="javascript:Dellog()">Delete</a>
-                <a href="javascript:Editlog()">Edit</a>
+        <?php foreach ($article->comments as $comment): ?>
+        <div class="view_box5">
+            <div class="view_comment view_box4">
+
+                <div class="view_id">ID:<?= $comment->id ?></div>
+                <div class="view_hn">HN:<?= $comment->handlename ?></div>
+                <div class="view_time">TIME:<?= $comment->created->format('Y年m月d日 H:i:s') ?></div>
+
+                <div class="view_delete">
+                    <a href="javascript:Dellog()">Delete</a>
+                    <a href="javascript:Editlog()">Edit</a>
+                </div>
             </div>
+            <div class = "view_contents"><div><?= $comment->body ?></div></div>
         </div>
-            <?php endforeach; ?>
+        <?php endforeach; ?>
     </div>
 </div>
 

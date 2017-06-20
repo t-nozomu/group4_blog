@@ -63,7 +63,7 @@
 
 <script type="text/javascript">
     function Dellog(){
-            var pswd = window.prompt("パスワードを入力してください","");
+            var pswd = window.prompt("Plase enter your password","");
             if(pswd != null){
             var form = document.createElement('form');
             document.body.appendChild( form );
@@ -79,14 +79,14 @@
 
         }
         else{
-            window.alert("入力をキャンセルします");
+            window.alert("Cancel password input.");
         }
 
     }
 
     function Editlog(){
             //window.alert("aaaaaaaa");
-            if(pswd = window.prompt("パスワード入力","")){
+            if(pswd = window.prompt("Plase enter your password.","")){
             var form = document.createElement('form');
             document.body.appendChild( form );
             var input = document.createElement('input');
@@ -99,7 +99,7 @@
             form.submit();
         }
         else{
-            window.alert("入力をキャンセルします");
+            window.alert("Cancel password input.");
         }
 
     }

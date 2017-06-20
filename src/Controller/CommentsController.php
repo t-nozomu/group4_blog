@@ -85,15 +85,15 @@ class CommentsController extends AppController
         if(!isset($this->request->data['handlename'])){
             if(isset($this->request->data['password'])){
                 if($this->request->data['password'] === $comment->password){
-                    $this->Flash->success(__('パスワード認証完了'));
+                    $this->Flash->success(__('Password authentication completed.'));
                 }
                 else{
-                    $this->Flash->error(__('パスワードに誤りがあります'));
+                    $this->Flash->error(__('The password is incorrect.'));
                     return $this->redirect(['controller'=>'articles','action' => 'view',$comment->article_id]);
                 }
             }
             else{
-                $this->Flash->error(__('不正なアクセスを確認'));
+                $this->Flash->error(__('Confirm unauthorized access'));
                 return $this->redirect(['controller'=>'articles','action' => 'view',$comment->article_id]);
             }
 

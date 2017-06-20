@@ -1,11 +1,10 @@
-<h1 class=title_name>Blog articles</h1>
 <?php if( is_null($auth) ): ?>
     <p><?= $this->Html->link('Login', ['controller' => 'Users', 'action' => 'login'],['class'=>'link_color']) ?></p>
     <?php else: ?>
         <p><?= $this->Html->link('Logout', ['controller' => 'Users', 'action' => 'logout'],['class'=>'link_color']) ?></p>
 <?php endif; ?>
 <?php if( !is_null($auth) ): ?>
-    <p><?= $this->Html->link('投稿', ['action' => 'add'],['class'=>'link_color']) ?></p>
+    <p><?= $this->Html->link('Add artcles', ['action' => 'add'],['class'=>'link_color']) ?></p>
 <?php endif; ?>
 
 

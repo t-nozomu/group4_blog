@@ -1,10 +1,12 @@
-<?php if( is_null($auth) ): ?>
-    <p><?= $this->Html->link('Login', ['controller' => 'Users', 'action' => 'login'],['class'=>'link_color']) ?></p>
-    <?php else: ?>
-        <p><?= $this->Html->link('Logout', ['controller' => 'Users', 'action' => 'logout'],['class'=>'link_color']) ?></p>
-<?php endif; ?>
+<div class="login_logout_button">
+    <?php if( is_null($auth) ): ?>
+        <div class="login_button"><?= $this->Html->link('Login', ['controller' => 'Users', 'action' => 'login'],['class'=>'link_color']) ?></div>
+        <?php else: ?>
+            <div class="logout_button"><?= $this->Html->link('Logout', ['controller' => 'Users', 'action' => 'logout'],['class'=>'link_color']) ?></div>
+        <?php endif; ?>
+</div>
 <?php if( !is_null($auth) ): ?>
-    <p><?= $this->Html->link('Add artcles', ['action' => 'add'],['class'=>'link_color']) ?></p>
+    <div><?= $this->Html->link('Add artcles', ['action' => 'add'],['class'=>'link_color']) ?></div>
 <?php endif; ?>
 
 

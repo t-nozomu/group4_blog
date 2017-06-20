@@ -1,5 +1,11 @@
 /*index.ctp*/
 /*背景色*/
+.login_logout_button{
+    display: flex;
+}
+.login_button, .logout_button{
+    margin-left: auto;
+}
 .div_haikei{
     background-color: #FBFBF0;
 }

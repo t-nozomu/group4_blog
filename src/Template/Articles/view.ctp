@@ -8,7 +8,7 @@
 <div class="view_box">
     <div class="view_box1">
     <div class="view_title">TITLE : <?= h($article->title) ?></div>
-        <div class="view_time"><?= $article->created->format('Y年m月d日 H:i:s') ?></div>
+        <div class="view_time"><?= $article->modified->format('Y年m月d日 H:i:s') ?></div>
         <?php if( !is_null($auth) ): ?>
         <div class="view_delete1"><?=  $this->Form->postLink(
             'Delete',
@@ -51,7 +51,7 @@
             <div class="view_comment view_box4">
 
                 <div class="view_hn">HN:<?= h($comment->handlename) ?></div>
-                <div class="view_time"><?= $comment->created->format('Y年m月d日 H:i:s') ?></div>
+                <div class="view_time"><?= $comment->modified->format('Y年m月d日 H:i:s') ?></div>
 
                 <div class="view_delete">
                     <a href="javascript:Dellog(<?= $comment->id?>)" class="link_color">Delete</a>

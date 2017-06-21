@@ -133,3 +133,6 @@ textarea{
     width: 700px;
     word-wrap: break-word;
 }
+a[href="#"]:not(.link_color){
+    color: #5D86FF;
+}

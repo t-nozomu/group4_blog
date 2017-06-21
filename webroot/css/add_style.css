@@ -9,7 +9,7 @@
     margin: auto;
     padding: 1em;
     width: 460px;
-    height: 480px;
+    height: auto;
 }
 .add_box1{
     display: flex;
@@ -23,6 +23,9 @@
 }
 label[for=body]{
     margin-bottom: 10px;
+}
+.error-message{
+    width:500px;
 }
 /*Contents設定*/
 /*textarea#contents{

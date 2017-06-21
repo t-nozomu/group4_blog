@@ -31,7 +31,8 @@ div{
     background: #FFFFFF;
 }
 .top-bar.expanded, .top-bar,.top-bar-section ul li,.top-bar-section li:not(.has-form) a:not(.button) {
-    background: #116d76;
+    background: repeating-linear-gradient(-45deg, #f9f3eb, #f9f3eb 10px, #ebc9c9 0, #ebc9c9 20px);
+    /*background: #db72a4;#116d76*/
     /*background: #FFA500;*/
 }
 .top-bar-section li:not(.has-form) a:not(.button):hover {
@@ -62,7 +63,6 @@ div{
     margin: 0 auto;
     padding: 1em;
     width: 920px;
-
 }
 .div_box1{
     border: 4px double #ebc9c9;
@@ -127,7 +127,7 @@ div{
 /*URLが付いている文字列*/
 a{
     text-decoration: none;
-    color: #FFF;
+    color: #db72a4;
 }
 
 /*title設定*/
@@ -158,9 +158,9 @@ textarea{
     border: 4px double #EB5D00;
     background-color: #edd0d0;
     margin: auto;
-    padding: 1em;
+    padding: 12px;
     width: 460px;
-    height: 480px;
+    height: auto;
 }
 .edit_box1{
     display: flex;
@@ -221,4 +221,10 @@ div.message.hidden {
 /*group4_title設定*/
 .group4_title{
     background-color: orange;
+}
+a[href="#"]{
+    color: #5D86FF;
+}
+.error-message{
+    width:700px;
 }

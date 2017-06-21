@@ -35,7 +35,7 @@
         </div>
                 <div class="div_comments"><?= count($article->comments) ?></div>
         <div class="div_created">
-            <?= $article->created->format('Y年m月d日 H:i:s') ?>
+            <?= $article->modified->format('Y年m月d日 H:i:s') ?>
         </div>
         <div class="div_actions">
             <?php if( !is_null($auth) ): ?>

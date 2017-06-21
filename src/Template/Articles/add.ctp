@@ -7,7 +7,7 @@
     <div class="add_title"><?= $this->Form->control('title',['maxlength'=>20]) ?></div>
     <div class="add_body"><?= $this->Form->control('body', ['rows' => '20','cols'=>'62','label'=>'Contents']) ?></div>
     <div class="add_box1">
-        <div><?= $this->Form->button(__('Add')) ?></div>
+        <div><?= $this->Form->button(__('Add'),['onclick'=>'return double(this)']) ?></div>
         <?= $this->Form->end() ?>
         <?= $this->Form->create(null,['url'=>['controller'=>'articles','action' => 'index']]) ?>
         <div><?= $this->Form->button('Back',['class'=>'HelperButton']) ?></div>
@@ -15,3 +15,9 @@
     </div>
 </div>
 </body>
+<script type="text/javascript">
+    function double(a){
+        a.disabled = true;
+        a.form.submit();
+    }
+</script>

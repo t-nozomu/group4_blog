@@ -36,7 +36,7 @@
         <div class="view_keikoku"><?= "※このパスワードはコメント修正、削除時に必要になります。<br />" ?> </div>
     </div>
 
-    <div class="add_button"><?= $this->Form->button(__('Add')) ?></div>
+    <div class="add_button"><?= $this->Form->button(__('Add'),['onclick'=>'return double(this)']) ?></div>
     <?= $this->Form->hidden('article_id',array('value'=>$article->id)) ?>
     <?= $this->Form->end() ?>
 
@@ -107,4 +107,8 @@
         }
 
     }
+        function double(a){
+            a.disabled = true;
+            a.form.submit();
+        }
 </script>

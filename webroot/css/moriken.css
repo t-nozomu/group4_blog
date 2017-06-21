@@ -119,7 +119,7 @@ div{
     width: 920px;
 }
 .link_color{
-    color: #5D86FF;
+    color: #db72a4; #db72a4 #5D86FF
 }
 .del_color{
     color: red;
@@ -223,7 +223,7 @@ div.message.hidden {
     background-color: orange;
 }
 a[href="#"]{
-    color: #5D86FF;
+    color: #db72a4;
 }
 .error-message{
     width:700px;

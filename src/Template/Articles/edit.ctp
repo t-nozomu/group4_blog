@@ -10,8 +10,8 @@
             <?= $this->Form->button(__('Save Article')) ?>
             <?= $this->Form->end() ?>
 
-            <?= $this->Form->create() ?>
-            <?= $this->Form->button('Back',array('onclick' => 'history.back(); return false;')) ?>
+            <?= $this->Form->create(null,['url'=>['controller'=>'articles','action' => 'view', $article->id]]) ?>
+            <?= $this->Form->button('Back',['class'=>'HelperButton']) ?>
             <?= $this->Form->end() ?>
 
         </div>

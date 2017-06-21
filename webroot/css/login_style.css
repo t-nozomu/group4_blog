@@ -44,3 +44,18 @@ label[for=password]{
     border-radius: 6px;
     margin-top: 20px;
 }*/
+button[type="submit"]{
+    background-color: #fff;
+	border: 2px solid #fff;
+	color: #db72a4;
+	line-height:   ;
+    height: 35px;
+    border-radius: 6px;
+    width: 50px;
+
+}
+button[type="submit"]:hover{
+    background-color: #fff;
+	border-color: #f77492;
+	color: #f77492;
+}

@@ -2,6 +2,8 @@
 /*記事画面*/
 .view_title1{
     text-align: right;
+    margin: 0px auto;
+    width: 735px;
 }
 .view_box{
     border: 4px double #EB5D00;

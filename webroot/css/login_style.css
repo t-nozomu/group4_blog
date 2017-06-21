@@ -69,6 +69,15 @@ input[type="text"]{
     width: 200px;
     height:25px;
     font-size: 20px;
+    border: 2px solid #f9f2f2;
+}
+input[type="text"]:hover{
+    background-color: #fff4ea;
+    border-color: #f77492;
+}
+input[type="text"]:focus{
+    outline: 0;
+    border-color: #f77492;
 }
 input[type="password"]{
     background-color: #fff4ea;
@@ -76,4 +85,13 @@ input[type="password"]{
     width: 200px;
     height:25px;
     font-size: 20px;
+    border: 2px solid #f9f2f2;
+}
+input[type="password"]:hover{
+    background-color: #fff4ea;
+    border-color: #f77492;
+}
+input[type="password"]:focus{
+    outline: 0;
+    border-color: #f77492;
 }

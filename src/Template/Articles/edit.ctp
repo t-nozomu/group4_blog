@@ -8,7 +8,7 @@
         <div class="edit_title"><?= $this->Form->control('title') ?></div>
         <div class="edit_contents"><?= $this->Form->control('body', ['rows' => '20','cols'=>'62','label'=>'Contents']) ?></div>
         <div class="edit_box1">
-            <?= $this->Form->button(__('Save Article'),,['onclick'=>'return double(this)']) ?>
+            <?= $this->Form->button(__('Save Article'),['onclick'=>'return double(this)']) ?>
             <?= $this->Form->end() ?>
 
             <?= $this->Form->create(null,['url'=>['controller'=>'articles','action' => 'view', $article->id]]) ?>

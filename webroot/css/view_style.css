@@ -87,6 +87,16 @@ textarea{
     background-color: #edd0d0;
     font-size: 20px;
     width: 695px;
+    border: 2px solid #f9f2f2;
+}
+textarea:hover{
+    background-color: #edd0d0;
+    border-color: #f77492;
+    color: #f77492;
+}
+textarea:focus{
+    outline: 0;
+    border-color: #f77492;
 }
 /*Comment一覧設定*/
 .view_box3{

@@ -1,5 +1,6 @@
 <!-- File: src/Template/Articles/edit.ctp -->
 <?= $this->Html->css('CommentsEdit_style.css') ?>
+<body class="haikei">
 <h1 class="cedit_title">Edit Comment</h1>
     <div class="cedit_box">
         <div><?= $this->Form->create($comment) ?></div>
@@ -14,7 +15,7 @@
         <div><?= $this->Form->end() ?></div>
 
     </div>
-
+</body>
     <script type="text/javascript">
         function double(a){
             a.disabled = true;

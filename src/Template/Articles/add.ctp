@@ -5,7 +5,7 @@
 <div class="add_box">
     <?= $this->Form->create($article) ?>
     <div class="add_title"><?= $this->Form->control('title',['maxlength'=>20]) ?></div>
-    <div class="add_body"><?= $this->Form->control('body', ['rows' => '27','cols'=>'62','label'=>'Contents']) ?></div>
+    <div class="add_body"><?= $this->Form->control('body', ['rows' => '20','cols'=>'62','label'=>'Contents']) ?></div>
     <div class="add_box1">
         <div><?= $this->Form->button(__('Add')) ?></div>
         <?= $this->Form->end() ?>

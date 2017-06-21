@@ -151,6 +151,17 @@ a[href="/group4_blog/users/logout"]{
     padding: 2px 15px 6px 15px;
     border-radius: 6px;
 }
+a[href="/group4_blog/articles/add"]{
+    text-decoration: none;
+    color: #db72a4;
+    background-color: #ffd6d6;
+    padding: 2px 15px 6px 15px;
+    border-radius: 6px;
+}
+a{
+    text-decoration: none;
+    color: #db72a4;
+}
 
 
 /*title設定*/
@@ -168,6 +179,9 @@ textarea{
     resize:none;
     background-color: #f9f2f2;
     border: 0;
+    font-size: 20px;
+    width: 455px;
+    height: auto;
 
 }
 
@@ -252,5 +266,8 @@ a[href="#"]{
     width:700px;
 }
 .haikei{
-    background-color: #fff4ea;
+    background-color: #fff4ea;    /*background-color: #fcfcfc;*/
+    background-image: radial-gradient(#bbd6ea 10%, transparent 20%), radial-gradient(#eac0bb 10%, transparent 20%);
+    background-size: 20px 20px;
+    background-position: 0 0, 10px 10px;
 }

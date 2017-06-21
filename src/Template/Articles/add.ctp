@@ -1,5 +1,6 @@
 <!-- File: src/Template/Articles/add.ctp -->
 <?= $this->Html->css('add_style.css') ?>
+<body class="haikei">
 <div class="add_t"><h1>Add Article</h1></div>
 <div class="add_box">
     <?= $this->Form->create($article) ?>
@@ -11,3 +12,4 @@
     </div>
     <?= $this->Form->end() ?>
 </div>
+</body>

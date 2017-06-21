@@ -1,3 +1,4 @@
+<body class="haikei">
 <?= $this->Html->css('login_style.css') ?>
 <?= $this->Flash->render() ?>
 <div class="login_box">
@@ -19,3 +20,4 @@
 </div>
     </center>
 </div>
+</body>

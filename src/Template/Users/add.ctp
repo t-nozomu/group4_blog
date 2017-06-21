@@ -1,3 +1,4 @@
+<body class="haikei">
 <div class="users form">
 <?= $this->Form->create($user) ?>
     <fieldset>
@@ -14,3 +15,4 @@
     <?= $this->Form->create() ?>
     <?= $this->Form->end() ?>
 </div>
+</body>

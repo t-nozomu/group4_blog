@@ -1,5 +1,5 @@
 
-
+<body class="haikei">
 <div>
     <div class="edit_t"><h1>Edit Article</h1></div>
     <div class="edit_box">
@@ -17,3 +17,4 @@
         </div>
     </div>
 </div>
+</body>

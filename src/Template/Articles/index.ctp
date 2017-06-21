@@ -1,4 +1,5 @@
 <div class="login_logout_button">
+<body class="haikei">
     <?php if( is_null($auth) ): ?>
         <div class="login_button"><?= $this->Html->link('Login', ['controller' => 'Users', 'action' => 'login'],['class'=>'link_color']) ?></div>
         <?php else: ?>
@@ -49,3 +50,4 @@
     </div>
     <?php endforeach; ?>
 </div>
+</body>

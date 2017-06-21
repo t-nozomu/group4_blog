@@ -1,5 +1,6 @@
 <!-- 記事部分 -->
 <?= $this->Html->css('view_style.css') ?>
+<body class="haikei">
     <div class="view_title1"><?= $this->Form->postLink(
         '記事一覧へ',
         ['action' => 'index'],['class' => 'link_color'])?>
@@ -32,7 +33,7 @@
     <div class="view_body1"><?= $this->Form->input('body', ['rows' => '7', 'cols' => '96','label'=>'Contents','maxlength'=>400]) ?></div>
     <div>
         <div><?=  $this->Form->input('password',array('placeholder' => "任意のPassを入力してください")) ?> </div>
-        <div><?= "※このパスワードはコメント修正、削除時に必要になります。<br />" ?> </div>
+        <div class="view_keikoku"><?= "※このパスワードはコメント修正、削除時に必要になります。<br />" ?> </div>
     </div>
 
     <div class="add_button"><?= $this->Form->button(__('Add')) ?></div>
@@ -62,6 +63,7 @@
         <?php endforeach; ?>
     </div>
 </div>
+</body>
 
 <script type="text/javascript">
     function Dellog(id){

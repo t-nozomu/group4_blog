@@ -134,5 +134,11 @@ textarea{
     word-wrap: break-word;
 }
 a[href="#"]:not(.link_color){
-    color: #5D86FF;
+    color: #db72a4;
+}
+.view_keikoku{
+    color: #ed5376;
+}
+.haikei{
+    background-color: #fff4ea;
 }

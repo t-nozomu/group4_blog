@@ -31,8 +31,8 @@ div{
     background: #FFFFFF;
 }
 .top-bar.expanded, .top-bar,.top-bar-section ul li,.top-bar-section li:not(.has-form) a:not(.button) {
-    background: repeating-linear-gradient(-45deg, #f9f3eb, #f9f3eb 10px, #ebc9c9 0, #ebc9c9 20px);
-    /*background: #db72a4;#116d76*/
+    background: repeating-linear-gradient(-45deg, #fff, #fff 10px, #ebc9c9 0, #ebc9c9 20px);
+    /*background: #db72a4;#116d76,#ebc9c9,f9f3eb*/
     /*background: #FFA500;*/
 }
 .top-bar-section li:not(.has-form) a:not(.button):hover {
@@ -227,4 +227,7 @@ a[href="#"]{
 }
 .error-message{
     width:700px;
+}
+.haikei{
+    background-color: #fff4ea;
 }

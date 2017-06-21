@@ -142,11 +142,11 @@ textarea:focus{
     width: 80px;
 }
 .view_hn{
-    width: 350px;
+    width: 360px;
 }
 .view_time{
     width: 198px;
-    margin-left: 50px;
+    margin-left: 20px;
 }
 .view_delete{
     margin-left:auto;

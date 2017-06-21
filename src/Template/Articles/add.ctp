@@ -8,8 +8,10 @@
     <div class="add_body"><?= $this->Form->control('body', ['rows' => '27','cols'=>'62','label'=>'Contents']) ?></div>
     <div class="add_box1">
         <div><?= $this->Form->button(__('Add')) ?></div>
-        <div><?= $this->Form->button('Back',array('onclick' => 'history.back(); return false;')) ?></div>
+        <?= $this->Form->end() ?>
+        <?= $this->Form->create(null,['url'=>['controller'=>'articles','action' => 'index']]) ?>
+        <div><?= $this->Form->button('Back',['class'=>'HelperButton']) ?></div>
+        <?= $this->Form->end() ?>
     </div>
-    <?= $this->Form->end() ?>
 </div>
 </body>

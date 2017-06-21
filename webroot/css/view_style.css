@@ -79,10 +79,14 @@ button{
 input{
     background-color: #edd0d0;
     border: 0;
-    width: 200px;
+    width: 300px;
+    height:25px;
+    font-size: 20px;
 }
 textarea{
     background-color: #edd0d0;
+    font-size: 20px;
+    width: 695px;
 }
 /*Comment一覧設定*/
 .view_box3{

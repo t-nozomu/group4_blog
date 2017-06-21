@@ -32,6 +32,7 @@ div{
 }
 .top-bar.expanded, .top-bar,.top-bar-section ul li,.top-bar-section li:not(.has-form) a:not(.button) {
     background: repeating-linear-gradient(-45deg, #fff, #fff 10px, #ebc9c9 0, #ebc9c9 20px);
+    border-radius: 6px;
     /*background: #db72a4;#116d76,#ebc9c9,f9f3eb*/
     /*background: #FFA500;*/
 }
@@ -125,10 +126,32 @@ div{
     color: red;
 }
 /*URLが付いている文字列*/
-a{
+a[href="/group4_blog"]{
+    text-decoration: none;
+    color: #db72a4;
+    background-color: #ffd6d6;
+    border-radius: 6px;
+    padding: 0 10px;
+}
+a[href="/group4_blog/users/login"]{
+    text-decoration: none;
+    color: #db72a4;
+    background-color: #ffd6d6;
+    padding: 2px 15px 6px 15px;
+    border-radius: 6px;
+}
+a[href="/group4_blog/articles/add"]{
     text-decoration: none;
     color: #db72a4;
 }
+a[href="/group4_blog/users/logout"]{
+    text-decoration: none;
+    color: #db72a4;
+    background-color: #ffd6d6;
+    padding: 2px 15px 6px 15px;
+    border-radius: 6px;
+}
+
 
 /*title設定*/
 input#title{

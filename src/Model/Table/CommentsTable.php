@@ -38,7 +38,7 @@ class CommentsTable extends Table
         foreach ($data as $key => $value) {
             if (is_string($value)) {
                 $data[$key] = preg_replace('/^[ 　\r\n]+/u', '', $value);
-                $data[$key] = trim(preg_replace("/(\r\n){3,}|\r{3,}|\n{3,}/","\n\n",$value));
+                $data[$key] = trim(preg_replace("/(\r\n){3,}|\r{3,}|\n{3,}/","\n\n",$data[$key]));
             }
         }
     }

@@ -42,7 +42,7 @@ class ArticlesTable extends Table
     {
         foreach ($data as $key => $value) {
             if (is_string($value)) {
-                $data[$key] = preg_replace('/^[ 　]+/u', '', $value);
+                $data[$key] = preg_replace('/^[ 　\r\n]+/u', '', $value);
             }
         }
     }
